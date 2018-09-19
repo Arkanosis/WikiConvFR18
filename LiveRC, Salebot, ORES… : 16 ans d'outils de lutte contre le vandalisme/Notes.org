@@ -2,10 +2,21 @@
 ** Titre : LiveRC, Salebot, ORES… : 16 ans d'outils de lutte contre le vandalisme
 ** Date et heure : samedi 6 octobre, 12 h 00
 ** Durée : 30 min
-** Lien : bibliothèque (40 personnes)
+** Lieu : bibliothèque (40 personnes)
 ** Description : [[https://meta.wikimedia.org/wiki/WikiConvention_francophone/2018/Programme/LiveRC,_Salebot,_ORES%E2%80%A6_:_16_ans_d%27outils_de_lutte_contre_le_vandalisme][meta]]
 ** Notes : [[https://notes.wikimedia.fr/public_pad/WikiConvFR18_vandalisme][pad]]
 ** Suite : pause café (30 min)
+* Description
+Depuis 2002, les contributeurs aux projets Wikimedia développent et
+perfectionnent des outils pour détecter et corriger efficacement les
+maladresses, les erreurs, les modifications indésirables et les vandalismes.
+Du simple bouton « annuler » à la plateforme logicielle ORES mêlant
+intelligence artificielle et apprentissage automatique, ces outils sont à la
+fois nombreux et très différents les uns des autres.
+
+Cette conférence consistera en un panorama plus ou moins chronologique et
+nécessairement non-exhaustif des outils en question : IRC, Vandal Fighter,
+Popups, LiveRC, Twinkle, Salebot, ClueBot, Huggle, ORES, etc.
 * Préparation
 ** Screenshots
 * Plan
@@ -13,6 +24,15 @@
 ** Par type d'outil ?
 * Sujets à aborder
 ** Outils
+*** Undo
+*** Rollback
+*** IRC
+*** Vandal Fighter
+*** Popups
 *** LiveRC
+*** Twinkle
+*** Salebot
+*** ClueBot
+*** Huggle
 *** ORES
 *** WMRC

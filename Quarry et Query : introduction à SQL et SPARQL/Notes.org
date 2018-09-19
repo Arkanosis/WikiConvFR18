@@ -2,10 +2,25 @@
 ** Titre : Quarry et Query : introduction à SQL et SPARQL
 ** Date et heure : samedi 6 octobre, 14 h 00
 ** Durée : 1 h 30
-** Lien : atelier (30 personnes)
+** Lieu : atelier (30 personnes)
 ** Description : [[https://meta.wikimedia.org/wiki/WikiConvention_francophone/2018/Programme/Quarry_et_Query_:_introduction_%C3%A0_SQL_et_SPARQL][meta]]
 ** Notes : [[https://notes.wikimedia.fr/public_pad/WikiConvFR18_Quarry][pad]]
 ** Suite : Quoi de neuf sur Wikidata (Kvardek du)
+* Description
+Outre les données non structurées (texte, images, sons…) dont ils sont
+essentiellement composés, les projets Wikimedia renferment une étonnante
+quantité de données structurées. Grâce aux langages de requête SQL et SPARQL,
+il est possible de les extraire relativement facilement et rapidement pour
+répondre à des questions plus ou moins complexes.
+
+Cet atelier vise à introduire ces langages de requête et leur utilisation via
+les outils Quarry et Query, pour répondre à des questions aussi diverses et
+passionnantes que :
+ - « Quel était le neuvième pays le plus peuplé du monde en 1945 » ;
+ - « Quelle est la page la plus modifiée de la Wikisource en suédois ? » ;
+ - « Quel est le quarante-deuxième contributeur le plus prolifique de Wikispecies ? » ;
+ - « Quelle est la durée moyenne entre deux éditions de l'article “Insomnie” entre 21 h et 7 h ? »
+ - « Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ? »
 * Préparation
 * Plan
 ** SQL + Quarry
@@ -22,5 +37,10 @@
 **** Complétion de Wikidata
 **** Timeouts
 * Exemples de requêtes
-** SQL
-** SPARQL
+** SQL [0/3]
+ - [ ] Quelle est la page la plus modifiée de la Wikisource en suédois ?
+ - [ ] Quel est le quarante-deuxième contributeur le plus prolifique de Wikispecies ?
+ - [ ] Quelle est la durée moyenne entre deux éditions de l'article “Insomnie” entre 21 h et 7 h ?
+** SPARQL [0/2]
+ - [ ] Quel était le neuvième pays le plus peuplé du monde en 1945 ?
+ - [ ] Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ?

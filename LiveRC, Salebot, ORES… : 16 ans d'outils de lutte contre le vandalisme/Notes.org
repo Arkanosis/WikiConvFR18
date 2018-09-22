@@ -34,5 +34,8 @@ Popups, LiveRC, Twinkle, Salebot, ClueBot, Huggle, ORES, etc.
 *** Salebot
 *** ClueBot
 *** Huggle
+*** [[https://upload.wikimedia.org/wikipedia/commons/c/cc/Spatio-Temporal_Analysis_of_Revision_Metadata_and_the_STiki_Anti-Vandalism_Tool.pdf][STiki]] (2010)
 *** ORES
 *** WMRC
+* Références
+** https://upload.wikimedia.org/wikipedia/commons/7/74/La_lutte_contre_le_vandalisme_sur_Wikip%C3%A9dia_-_PSES_2012.pdf

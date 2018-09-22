@@ -7,12 +7,13 @@
 - xrandr
 - Brancher la souris
 - Brancher le pointeur
-- PENSER A DESACTIVER L'ECRAN DE VEILLE !!! xautolock -stop
+- PENSER A DESACTIVER L'ECRAN DE VEILLE !!! xautolock -disable
 
 ## Matériel
 * Portable marvin
 * Portable taz (backup)
 * Téléphone Note (démo)
+* Tablette Nexus 7 (démo)
 * Téléphone One (TOTP + démo backup)
 * Câble micro-HDMI → HDMI
 * Adaptateur micro-HDMI → VGA

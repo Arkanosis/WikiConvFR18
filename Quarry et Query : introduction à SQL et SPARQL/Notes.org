@@ -36,11 +36,70 @@ passionnantes que :
 *** Limitations
 **** Complétion de Wikidata
 **** Timeouts
+* Sujets à aborder
+** Quarry
+*** SQL
+*** MariaDB
+*** [[https://meta.wikimedia.org/wiki/Research:Quarry][Instructions de Quarry]]
+*** [[https://wikitech.wikimedia.org/wiki/Help:MySQL_queries][Notes]]
+*** [[https://meta.wikimedia.org/wiki/Learning_and_Evaluation/Wikiresearch_webinars][WikiResearch]]
+*** [[https://upload.wikimedia.org/wikipedia/commons/9/94/MediaWiki_1.28.0_database_schema.svg][Schéma de la BDD]]
+*** [[https://quarry.wmflabs.org/query/278][Liste des bases utilisables]] (requête Quarry)
+*** [[https://wikitech.wikimedia.org/wiki/Help:Toolforge/Database#Tables_for_revision_or_logging_queries_involving_user_names_and_IDs][Tables revision_userindex et logging_userindex]]
+** Query
+*** RDF
+*** SPARQL
 * Exemples de requêtes
-** SQL [0/3]
- - [ ] Quelle est la page la plus modifiée de la Wikisource en suédois ?
- - [ ] Quel est le quarante-deuxième contributeur le plus prolifique de Wikispecies ?
- - [ ] Quelle est la durée moyenne entre deux éditions de l'article “Insomnie” entre 21 h et 7 h ?
-** SPARQL [0/2]
+** SQL [3/3]
+ - [X] [[https://quarry.wmflabs.org/query/29880][Quelle est la page la plus modifiée de la Wikisource en suédois ?]]
+#+BEGIN_SRC sql
+  USE svwikisource_p;
+  SELECT page_namespace, page_title, COUNT(rev_id) AS num_edits
+  FROM page
+  JOIN revision ON page_id = rev_page
+  GROUP BY rev_page
+  ORDER BY num_edits DESC
+  LIMIT 10
+#+END_SRC
+ - [X] [[https://quarry.wmflabs.org/query/29883][Quel est le quarante-deuxième contributeur le plus prolifique de Wikispecies ?]]
+#+BEGIN_SRC sql
+  USE specieswiki_p;
+  SELECT rev_user_text AS user, COUNT(rev_id) AS num_edits
+  FROM revision_userindex
+  JOIN page ON page_id = rev_page
+  WHERE page_namespace = 0
+  GROUP BY user
+  ORDER BY num_edits DESC
+  LIMIT 42
+#+END_SRC
+ - [X] [[https://quarry.wmflabs.org/query/29892][Quelle est la durée moyenne entre deux éditions de l'article “Insomnie” entre 21 h et 7 h ?]]
+#+BEGIN_SRC sql
+USE frwiki_p;
+SELECT DATE(rev_timestamp), COUNT(time), (SUM(time) - MAX(time)) / COUNT(time) AS mean_time FROM
+  (SELECT rev_timestamp, TIMESTAMPDIFF(MINUTE, @previous, rev_timestamp) AS time, @previous := rev_timestamp
+   FROM (SELECT @previous := 0) AS _, revision
+   JOIN page ON page_id = rev_page
+   WHERE page_namespace = 0
+   AND page_title = 'Insomnie'
+   ORDER BY rev_timestamp) AS timestamps
+WHERE (HOUR(rev_timestamp) > 19 OR HOUR(rev_timestamp) < 5)
+GROUP BY DATE(rev_timestamp) HAVING COUNT(time) > 1
+ORDER BY rev_timestamp
+#+END_SRC
+** SPARQL [1/2]
  - [ ] Quel était le neuvième pays le plus peuplé du monde en 1945 ?
- - [ ] Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ?
+Celle-ci va être compliquée… Il n'y a pas eu de recensement en 1945…
+ - [X] Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ?
+#+BEGIN_SRC sparql
+  SELECT DISTINCT ?author ?authorLabel WHERE
+  {
+    ?author
+      wdt:P31 wd:Q5 ;
+      wdt:P106/wdt:P279* wd:Q482980 ;
+      wdt:P570 ?death_date .
+    FILTER(
+      (?death_date >= "1947-01-01T00:00:00Z"^^xsd:dateTime) &&
+      (?death_date < "1948-01-01T00:00:00Z"^^xsd:dateTime))
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],fr,en". }
+  }
+#+END_SRC

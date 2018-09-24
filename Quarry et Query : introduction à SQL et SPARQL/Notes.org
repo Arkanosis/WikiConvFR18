@@ -46,6 +46,7 @@ passionnantes que :
 *** [[https://upload.wikimedia.org/wikipedia/commons/9/94/MediaWiki_1.28.0_database_schema.svg][Schéma de la BDD]]
 *** [[https://quarry.wmflabs.org/query/278][Liste des bases utilisables]] (requête Quarry)
 *** [[https://wikitech.wikimedia.org/wiki/Help:Toolforge/Database#Tables_for_revision_or_logging_queries_involving_user_names_and_IDs][Tables revision_userindex et logging_userindex]]
+*** [[https://tools.wmflabs.org/sql-optimizer][Liste des tables et suggestions d'optimisation]]
 ** Query
 *** RDF
 *** SPARQL

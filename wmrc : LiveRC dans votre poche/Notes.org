@@ -2,7 +2,7 @@
 ** Titre : wmrc : LiveRC dans votre poche
 ** Date et heure : samedi 6 octobre, 16 h 00
 ** Durée : 5 min
-** Lieu : auditorium (270 personnes)
+** Lieu : bibliothèque (40 personnes)
 ** Description : [[https://meta.wikimedia.org/wiki/WikiConvention_francophone/2018/Programme/WMRC_:_LiveRC_dans_votre_poche][meta]]
 ** Notes : [[https://notes.wikimedia.fr/public_pad/WikiConvFR18_Lightening][pad]]
 ** Suite : pause café (30 min)

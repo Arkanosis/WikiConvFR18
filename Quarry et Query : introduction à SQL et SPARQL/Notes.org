@@ -1,11 +1,11 @@
 * Infos
 ** Titre : Quarry et Query : introduction à SQL et SPARQL
 ** Date et heure : samedi 6 octobre, 14 h 00
-** Durée : 1 h 30
+** Durée : 1 h 50
 ** Lieu : atelier (30 personnes)
 ** Description : [[https://meta.wikimedia.org/wiki/WikiConvention_francophone/2018/Programme/Quarry_et_Query_:_introduction_%C3%A0_SQL_et_SPARQL][meta]]
 ** Notes : [[https://notes.wikimedia.fr/public_pad/WikiConvFR18_Quarry][pad]]
-** Suite : Quoi de neuf sur Wikidata (Kvardek du)
+** Suite : Présentations éclair 2
 * Description
 Outre les données non structurées (texte, images, sons…) dont ils sont
 essentiellement composés, les projets Wikimedia renferment une étonnante

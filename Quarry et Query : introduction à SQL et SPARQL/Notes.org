@@ -24,18 +24,35 @@ passionnantes que :
 * Préparation
 * Plan
 ** SQL + Quarry
-*** Langage SQL
 *** Quarry
+ - MariaDB
+*** Langage SQL
+ - SELECT FROM
+ - LIMIT
+ - WHERE
+ - AND OR
+ - IN
+ - BETWEEN
+ - LIKE
+ - DISTINCT
+ - COUNT, SUM, AVG, MIN, MAX
+ - GROUPBY
+ - HAVING
+ - JOIN ON (INNER JOIN)
+ - LEFT/RIGHT JOIN (LEFT/RIGHT OUTER JOIN)
+ - FULL JOIN (FULL OUTER JOIN)
+ - EXPLAIN
 *** Exemples de requêtes
 *** Limitations
-**** Données confidentielles
+ - Replag
+ - Données confidentielles
 ** SPARQL + Query
 *** Langage SPARQL
 *** Query
 *** Exemples de requêtes
 *** Limitations
-**** Complétion de Wikidata
-**** Timeouts
+ - Complétion de Wikidata
+ - Timeouts
 * Sujets à aborder
 ** Quarry
 *** SQL

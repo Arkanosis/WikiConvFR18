@@ -21,21 +21,52 @@ Popups, LiveRC, Twinkle, Salebot, ClueBot, Huggle, ORES, etc.
 ** Screenshots
 * Plan
 ** Chronologique ?
+Dans ce cas, mettre un médaillon « builtin », « logiciel », etc. pour distinguer les types d'outils.
 ** Par type d'outil ?
-* Sujets à aborder
-** Outils
-*** Undo
-*** Rollback
-*** IRC
-*** Vandal Fighter
-*** Popups
-*** LiveRC
-*** Twinkle
-*** Salebot
-*** ClueBot
-*** Huggle
-*** [[https://upload.wikimedia.org/wikipedia/commons/c/cc/Spatio-Temporal_Analysis_of_Revision_Metadata_and_the_STiki_Anti-Vandalism_Tool.pdf][STiki]] (2010)
-*** ORES
-*** WMRC
+*** Outils builtins
+ - Undo
+ - Rollback
+ - [[https://meta.wikimedia.org/wiki/Help:Patrolled_edit/fr][Patrolled edits]]
+*** Extensions de MediaWiki
+ - FlaggedRevs
+ - PendingChanges
+ - [[https://www.mediawiki.org/wiki/Extension:Approved_Revs][Approved Revs]] (mw 1.11, [[https://gerrit.wikimedia.org/r/plugins/gitiles/mediawiki/extensions/ApprovedRevs/+/1470a7ad761c4360c2a88cf278d2b63290b70437][2010]], pas utilisé)
+ - [[https://www.mediawiki.org/wiki/Extension:Moderation][Moderation]] ([[https://github.com/edwardspec/mediawiki-moderation/commit/351fd5fc52828bb76298975928a0b663cd6b7d5f][2014]], pas utilisé)
+*** Scripts on-wiki
+ - Popups
+ - Twinkle
+ - xpatrol + xdone [pub, coi]
+*** Gros outils (on ou off-wiki)
+ - Vandal Fighter
+ - LiveRC
+ - Huggle
+ - [[https://upload.wikimedia.org/wikipedia/commons/c/cc/Spatio-Temporal_Analysis_of_Revision_Metadata_and_the_STiki_Anti-Vandalism_Tool.pdf][STiki]] (2010)
+ - wmrc (2018) [pub, coi, événement récent]
+*** Bots
+ - [[https://fr.wikipedia.org/wiki/Aide:Salebot][Salebot]] (afficher la liste des remerciements, l'élection admin, les anniversaires, etc.)
+ - ClueBot
+ - Cluekie
+ - COIBot
+ - Cubbie
+ - Computer (IRC script)
+ - pkgbot
+ - CVNbot (original, Perl, Python)
+ - SWMTBot → SWBot → CVNbot (C#)
+ - [[https://meta.wikimedia.org/wiki/Countervandalism_Network/Bots#CVN-ClerkBot][CVN bots]]
+*** Canaux de communication
+**** IRC @ Freenode [[https://en.wikipedia.org/wiki/Wikipedia:IRC#Channels_for_specific_tasks][(en]], [[https://fr.wikipedia.org/wiki/Aide:IRC#Canaux_consacr%C3%A9s_%C3%A0_Wikip%C3%A9dia_sur_irc.freenode.net][fr]])
+ - #countervandalism
+ - #cvn-wp-en
+ - #wikipedia
+ - #wikipedia-fr
+ - #wikipedia-fr-vandlism
+ - #wikipedia-fr-liverc
+ - #wikipedia-fr-admin
+ - #vandalism-fr-wp (Salebot)
+**** XMPP
+ - wikipedia-fr@muc.jappix.com
+*** Infrastructures
+ - https://cvn.wmflabs.org/
+ - ORES
 * Références
 ** https://upload.wikimedia.org/wikipedia/commons/7/74/La_lutte_contre_le_vandalisme_sur_Wikip%C3%A9dia_-_PSES_2012.pdf

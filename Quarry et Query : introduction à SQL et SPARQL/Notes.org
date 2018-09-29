@@ -21,12 +21,21 @@ passionnantes que :
  - « Quel est le quarante-deuxième contributeur le plus prolifique de Wikispecies ? » ;
  - « Quelle est la durée moyenne entre deux éditions de l'article “Insomnie” entre 21 h et 7 h ? »
  - « Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ? »
-* Préparation
-* Plan
+* Plan [1/12]
+  :PROPERTIES:
+  :COOKIE_DATA: todo recursive
+  :END:
+** Quarry & Query
+*** DONE Tableau comparatif
+ - SQL | SPARQL, [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual/fr#Linked_Data_Fragments_endpoint][LDF]]
+ - CSV, JSON, HTML, XSLX, wikitable | JSON
+ - MariaDB | Blazegraph
+ - Taille ? | Taille ?
+ - https://quarry.wmflabs.org/ | https://query.wikidata.org/
 ** SQL + Quarry
-*** Quarry
+*** TODO Quarry
  - MariaDB
-*** Langage SQL
+*** TODO Langage SQL
  - SELECT FROM
  - LIMIT
  - WHERE
@@ -42,33 +51,7 @@ passionnantes que :
  - LEFT/RIGHT JOIN (LEFT/RIGHT OUTER JOIN)
  - FULL JOIN (FULL OUTER JOIN)
  - EXPLAIN
-*** Exemples de requêtes
-*** Limitations
- - Replag
- - Données confidentielles
-** SPARQL + Query
-*** Langage SPARQL
-*** Query
-*** Exemples de requêtes
-*** Limitations
- - Complétion de Wikidata
- - Timeouts
-* Sujets à aborder
-** Quarry
-*** SQL
-*** MariaDB
-*** [[https://meta.wikimedia.org/wiki/Research:Quarry][Instructions de Quarry]]
-*** [[https://wikitech.wikimedia.org/wiki/Help:MySQL_queries][Notes]]
-*** [[https://meta.wikimedia.org/wiki/Learning_and_Evaluation/Wikiresearch_webinars][WikiResearch]]
-*** [[https://upload.wikimedia.org/wikipedia/commons/9/94/MediaWiki_1.28.0_database_schema.svg][Schéma de la BDD]]
-*** [[https://quarry.wmflabs.org/query/278][Liste des bases utilisables]] (requête Quarry)
-*** [[https://wikitech.wikimedia.org/wiki/Help:Toolforge/Database#Tables_for_revision_or_logging_queries_involving_user_names_and_IDs][Tables revision_userindex et logging_userindex]]
-*** [[https://tools.wmflabs.org/sql-optimizer][Liste des tables et suggestions d'optimisation]]
-** Query
-*** RDF
-*** SPARQL
-* Exemples de requêtes
-** SQL [3/3]
+*** TODO Exemples de requêtes
  - [X] [[https://quarry.wmflabs.org/query/29880][Quelle est la page la plus modifiée de la Wikisource en suédois ?]]
 #+BEGIN_SRC sql
   USE svwikisource_p;
@@ -104,7 +87,25 @@ WHERE (HOUR(rev_timestamp) > 19 OR HOUR(rev_timestamp) < 5)
 GROUP BY DATE(rev_timestamp) HAVING COUNT(time) > 1
 ORDER BY rev_timestamp
 #+END_SRC
-** SPARQL [1/2]
+*** TODO Trucs funs
+*** TODO Limitations
+ - Replag
+ - Données confidentielles
+*** Notes
+ - [[https://meta.wikimedia.org/wiki/Research:Quarry][Instructions de Quarry]]
+ - [[https://wikitech.wikimedia.org/wiki/Help:MySQL_queries][MySQL queries]]
+ - [[https://meta.wikimedia.org/wiki/Learning_and_Evaluation/Wikiresearch_webinars][WikiResearch]]
+ - [[https://upload.wikimedia.org/wikipedia/commons/9/94/MediaWiki_1.28.0_database_schema.svg][Schéma de la BDD]]
+ - [[https://quarry.wmflabs.org/query/278][Liste des bases utilisables]] (requête Quarry)
+ - [[https://wikitech.wikimedia.org/wiki/Help:Toolforge/Database#Tables_for_revision_or_logging_queries_involving_user_names_and_IDs][Tables revision_userindex et logging_userindex]]
+ - [[https://tools.wmflabs.org/sql-optimizer][Liste des tables et suggestions d'optimisation]]
+
+** SPARQL + Query
+*** TODO Query
+*** TODO Langage SPARQL
+*** TODO Autres entrées
+ - [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual/fr][LDF]]
+*** TODO Exemples de requêtes
  - [ ] Quel était le neuvième pays le plus peuplé du monde en 1945 ?
 Celle-ci va être compliquée… Il n'y a pas eu de recensement en 1945…
  - [X] Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ?
@@ -121,3 +122,9 @@ Celle-ci va être compliquée… Il n'y a pas eu de recensement en 1945…
     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],fr,en". }
   }
 #+END_SRC
+
+*** TODO Trucs funs
+ - http://wikidata.rawgraphs.io/?url=
+*** TODO Limitations
+ - Complétion de Wikidata
+ - Timeouts

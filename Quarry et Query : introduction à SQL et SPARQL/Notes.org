@@ -34,30 +34,24 @@ passionnantes que :
  - [[https://stats.wikimedia.org/v2/#/all-projects/contributing/new-registered-users/normal|bar|All|~total][> 50 Musers]], [[https://stats.wikimedia.org/v2/#/all-projects/contributing/new-pages/normal|bar|All|~total][> 300 Mpages]], [[https://stats.wikimedia.org/v2/#/all-projects/contributing/edits/normal|bar|All|~total][> 4 Gedits]] | [[https://tools.wmflabs.org/wikidata-todo/stats.php][> 50 Mitems, > 500 Mstatements]], [[http://www.rdfhdt.org/datasets/][> 7 Gtriples]]
  - https://quarry.wmflabs.org/ | https://query.wikidata.org/
 ** SQL + Quarry
-*** TODO Langage SQL
- - Commentaires
- - USE
- - LIMIT
- - SELECT FROM
- - WHERE
-#+BEGIN_SRC sql
-USE frwiki_p;
-SELECT * FROM user_groups
-WHERE ug_group = 'bureaucrat';
-#+END_SRC
- - AND OR
- - IN
- - BETWEEN
- - LIKE
- - DISTINCT
- - COUNT, SUM, AVG, MIN, MAX
- - GROUPBY
- - HAVING
- - JOIN ON (INNER JOIN)
- - LEFT/RIGHT JOIN (LEFT/RIGHT OUTER JOIN)
- - FULL JOIN (FULL OUTER JOIN)
- - EXPLAIN
-*** TODO Exemples de requêtes
+*** TODO Langage SQL [9/16]
+ - [X] Commentaires
+ - [X] USE
+ - [X] LIMIT
+ - [X] SELECT FROM
+ - [X] WHERE
+ - [X] AND / OR
+ - [X] IN / BETWEEN / NOT
+ - [X] LIKE
+ - [X] DISTINCT
+ - [ ] COUNT, SUM, AVG, MIN, MAX
+ - [ ] GROUPBY
+ - [ ] HAVING
+ - [ ] JOIN ON (INNER JOIN)
+ - [ ] LEFT/RIGHT JOIN (LEFT/RIGHT OUTER JOIN)
+ - [ ] FULL JOIN (FULL OUTER JOIN)
+ - [ ] EXPLAIN
+*** TODO Exemples de requêtes [3/3]
  - [X] [[https://quarry.wmflabs.org/query/29880][Quelle est la page la plus modifiée de la Wikisource en suédois ?]]
 #+BEGIN_SRC sql
   USE svwikisource_p;
@@ -109,7 +103,7 @@ ORDER BY rev_timestamp;
 ** SPARQL + Query
 *** TODO Langage SPARQL
 *** TODO Requêtes [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual/fr#Linked_Data_Fragments_endpoint][LDF]]
-*** TODO Exemples de requêtes
+*** TODO Exemples de requêtes [1/2]
  - [ ] Quel était le neuvième pays le plus peuplé du monde en 1945 ?
 Celle-ci va être compliquée… Il n'y a pas eu de recensement en 1945…
  - [X] Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ?

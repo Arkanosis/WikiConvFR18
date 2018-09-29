@@ -30,7 +30,7 @@ passionnantes que :
  - SQL | SPARQL, [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual/fr#Linked_Data_Fragments_endpoint][LDF]]
  - CSV, JSON, HTML, XSLX, wikitable | JSON
  - MariaDB | Blazegraph
- - Taille ? | Taille ?
+ - [[https://stats.wikimedia.org/v2/#/all-projects/contributing/new-registered-users/normal|bar|All|~total][> 50 Musers]], [[https://stats.wikimedia.org/v2/#/all-projects/contributing/new-pages/normal|bar|All|~total][> 300 Mpages]], [[https://stats.wikimedia.org/v2/#/all-projects/contributing/edits/normal|bar|All|~total][> 4 Gedits]] | [[https://tools.wmflabs.org/wikidata-todo/stats.php][> 50 Mitems, > 500 Mstatements]], [[http://www.rdfhdt.org/datasets/][> 7 Gtriples]]
  - https://quarry.wmflabs.org/ | https://query.wikidata.org/
 ** SQL + Quarry
 *** TODO Quarry

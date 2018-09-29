@@ -192,7 +192,7 @@ LIMIT 10;
 					</p>
 				</section>
 				<section>
-					<h2>SELECT … FROM …</h2>
+					<h2>SELECT … FROM</h2>
 					<div>
 						<pre><code class="sql">
 USE frwiki_p;
@@ -246,7 +246,7 @@ LIMIT 5;
 					</p>
 				</section>
 				<section>
-					<h2>SELECT … FROM …</h2>
+					<h2>SELECT … FROM</h2>
 					<table>
 						<thead>
 							<tr>
@@ -300,7 +300,7 @@ DESCRIBE user_groups;
 					</p>
 				</section>
 				<section>
-					<h2>SELECT … FROM …</h2>
+					<h2>SELECT … FROM</h2>
 					<div>
 						<pre><code class="sql">
 USE frwiki_p;
@@ -914,6 +914,332 @@ LIMIT 5;
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
 				</section>
+				<!-- TODO interlude -->
+				<section>
+					<h2>INNER JOIN … ON</h2>
+					<div>
+						<pre><code>
+USE frwiki_p;
+SELECT ug_user, ug_group
+FROM user_groups
+WHERE ug_group IN ('transwiki', 'confirmed', 'flow-bot');
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>ug_user</th>
+								<th>ug_group</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1523523</td>
+								<td>confirmed</td>
+							</tr>
+							<tr>
+								<td>1523524</td>
+								<td>confirmed</td>
+							</tr>
+							<tr>
+								<td>1523526</td>
+								<td>confirmed</td>
+							</tr>
+							<tr>
+								<td>2023166</td>
+								<td>flow-bot</td>
+							</tr>
+							<tr>
+								<td>2289461</td>
+								<td>flow-bot</td>
+							</tr>
+							<tr>
+								<td>2298548</td>
+								<td>flow-bot</td>
+							</tr>
+							<tr>
+								<td>482698</td>
+								<td>transwiki</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>INNER JOIN … ON</h2>
+					<div>
+						<pre><code>
+USE frwiki_p;
+SELECT user.user_name, user_groups.ug_group
+FROM user_groups
+INNER JOIN user ON user_groups.ug_user = user.user_id
+WHERE user_groups.ug_group IN ('transwiki', 'confirmed', 'flow-bot');
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>ug_user</th>
+								<th>ug_group</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Aft5monitor</td>
+								<td>confirmed</td>
+							</tr>
+							<tr>
+								<td>Aft5editor</td>
+								<td>confirmed</td>
+							</tr>
+							<tr>
+								<td>Aft5hide</td>
+								<td>confirmed</td>
+							</tr>
+							<tr>
+								<td>Gestionnaire de la page de Flow</td>
+								<td>flow-bot</td>
+							</tr>
+							<tr>
+								<td>Gestionnaire de la page Flow</td>
+								<td>flow-bot</td>
+							</tr>
+							<tr>
+								<td>Flow talk page manager</td>
+								<td>flow-bot</td>
+							</tr>
+							<tr>
+								<td>AntonierCH</td>
+								<td>transwiki</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>INNER JOIN … ON</h2>
+					<div>
+						<pre><code>
+USE frwiki_p;
+SELECT user.user_name, user_groups.ug_group
+FROM user_groups
+INNER JOIN user ON user_groups.ug_user = user.user_id
+WHERE user_groups.ug_group IN ('transwiki', 'confirmed', 'flow-bot');
+						</code></pre>
+					</div>
+					<div class="fragment">
+						<pre><code>
+USE frwiki_p;
+SELECT user_name, ug_group
+FROM user_groups
+JOIN user ON ug_user = user_id
+WHERE ug_group IN ('transwiki', 'confirmed', 'flow-bot');
+						</code></pre>
+					</div>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<!-- TODO interlude -->
+				<section>
+					<h2>Exemples</h2>
+					<blockquote>
+						Quelle est la page la plus modifiée de la Wikisource en suédois ?
+					</blockquote>
+					<ul class="fragment">
+						<li>svwikisource_p</li>
+						<li><a href="https://www.mediawiki.org/wiki/Manual:Page_table">https://www.mediawiki.org/wiki/Manual:Page_table</a></li>
+						<li><a href="https://www.mediawiki.org/wiki/Manual:Revision_table">https://www.mediawiki.org/wiki/Manual:Revision_table</a></li>
+					<div class="fragment">
+						<pre><code class="sql">
+USE svwikisource_p;
+SELECT page_namespace, page_title, COUNT(rev_id) AS nombre
+FROM page
+JOIN revision ON page_id = rev_page
+GROUP BY rev_page
+ORDER BY nombre DESC
+LIMIT 5;
+						</code></pre>
+					</div>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>Exemples</h2>
+					<div>
+						<pre><code class="sql">
+USE svwikisource_p;
+SELECT page_namespace, page_title, COUNT(rev_id) AS nombre
+FROM page
+JOIN revision ON page_id = rev_page
+GROUP BY rev_page
+ORDER BY nombre DESC
+LIMIT 5;
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>page_namespace</th>
+								<th>page_title</th>
+								<th>nombre</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>10</td>
+								<td>Antalsidor</td>
+								<td>3488</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Mötesplatsen</td>
+								<td>2229</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Innocent_bystander/testar/Fredrik_Reinfeldt</td>
+								<td>646</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Lista_över_texter_som_saknar_upphovsrättsmall</td>
+								<td>512</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>Nya_texter</td>
+								<td>460</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>Exemples</h2>
+					<blockquote>
+						Quel est le quarante-deuxième contributeur le plus prolifique de Wikispecies ?
+					</blockquote>
+					<ul class="fragment">
+						<li>specieswiki_p</li>
+						<li><a href="https://www.mediawiki.org/wiki/Manual:Page_table">https://www.mediawiki.org/wiki/Manual:Page_table</a></li>
+						<li><a href="https://www.mediawiki.org/wiki/Manual:Revision_table">https://www.mediawiki.org/wiki/Manual:Revision_table</a> (revision_userindex)</li>
+					<div class="fragment">
+						<pre><code class="sql">
+USE specieswiki_p;
+SELECT rev_user_text, COUNT(rev_id) AS nombre
+FROM revision_userindex
+JOIN page ON page_id = rev_page
+WHERE page_namespace = 0
+GROUP BY rev_user_text
+ORDER BY nombre DESC
+LIMIT 42;
+						</code></pre>
+					</div>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>Exemples</h2>
+					<div>
+						<pre><code class="sql">
+USE specieswiki_p;
+SELECT rev_user_text, COUNT(rev_id) AS nombre
+FROM revision_userindex
+JOIN page ON page_id = rev_page
+WHERE page_namespace = 0
+GROUP BY rev_user_text
+ORDER BY nombre DESC
+LIMIT 42;
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>rev_user_text</th>
+								<th>nombre</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="2">…</td>
+							</tr>
+							<tr>
+								<td>AchtSegel</td>
+								<td>11737</td>
+							</tr>
+							<tr>
+								<td>Kempm</td>
+								<td>11496</td>
+							</tr>
+							<tr>
+								<td>Kheller</td>
+								<td>10998</td>
+							</tr>
+							<tr>
+								<td>MKOliver</td>
+								<td>10657</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>Exemples</h2>
+					<blockquote>
+						Quelle est la durée moyenne entre deux éditions de l'article “Insomnie” entre 21 h et 7 h ?
+					</blockquote>
+					<ul class="fragment">
+						<li>frwiki_p</li>
+						<li><a href="https://www.mediawiki.org/wiki/Manual:Page_table">https://www.mediawiki.org/wiki/Manual:Page_table</a></li>
+						<li><a href="https://www.mediawiki.org/wiki/Manual:Revision_table">https://www.mediawiki.org/wiki/Manual:Revision_table</a></li>
+					<div class="fragment">
+						<pre><code class="sql">
+FIXME
+						</code></pre>
+					</div>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>Exemples</h2>
+					<div>
+						<pre><code class="sql">
+FIXME
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>FIXME</th>
+								<th>FIXME</th>
+								<th>FIXME</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>FIXME</td>
+								<td>FIXME</td>
+								<td>FIXME</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<!-- TODO interlude -->
 				<section>
 					<h2>Limitations de Quarry</h2>
 					<ul>
@@ -928,6 +1254,7 @@ LIMIT 5;
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
 				</section>
+				<!-- TODO interlude -->
 				<section>
 					<h2 style="margin-top: 10%; font-size:120%">Chapitre II<br>Query et SPARQL<span class="fragment"> (et LDF)</span></h2>
 					<p>

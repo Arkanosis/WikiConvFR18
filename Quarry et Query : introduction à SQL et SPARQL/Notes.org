@@ -35,9 +35,16 @@ passionnantes que :
  - https://quarry.wmflabs.org/ | https://query.wikidata.org/
 ** SQL + Quarry
 *** TODO Langage SQL
- - SELECT FROM
+ - Commentaires
+ - USE
  - LIMIT
+ - SELECT FROM
  - WHERE
+#+BEGIN_SRC sql
+USE frwiki_p;
+SELECT * FROM user_groups
+WHERE ug_group = 'bureaucrat';
+#+END_SRC
  - AND OR
  - IN
  - BETWEEN
@@ -59,7 +66,7 @@ passionnantes que :
   JOIN revision ON page_id = rev_page
   GROUP BY rev_page
   ORDER BY num_edits DESC
-  LIMIT 10
+  LIMIT 10;
 #+END_SRC
  - [X] [[https://quarry.wmflabs.org/query/29883][Quel est le quarante-deuxième contributeur le plus prolifique de Wikispecies ?]]
 #+BEGIN_SRC sql
@@ -70,7 +77,7 @@ passionnantes que :
   WHERE page_namespace = 0
   GROUP BY user
   ORDER BY num_edits DESC
-  LIMIT 42
+  LIMIT 42;
 #+END_SRC
  - [X] [[https://quarry.wmflabs.org/query/29892][Quelle est la durée moyenne entre deux éditions de l'article “Insomnie” entre 21 h et 7 h ?]]
 #+BEGIN_SRC sql
@@ -84,7 +91,7 @@ SELECT DATE(rev_timestamp), COUNT(time), (SUM(time) - MAX(time)) / COUNT(time) A
    ORDER BY rev_timestamp) AS timestamps
 WHERE (HOUR(rev_timestamp) > 19 OR HOUR(rev_timestamp) < 5)
 GROUP BY DATE(rev_timestamp) HAVING COUNT(time) > 1
-ORDER BY rev_timestamp
+ORDER BY rev_timestamp;
 #+END_SRC
 *** TODO Trucs funs
 *** DONE Limitations
@@ -125,3 +132,36 @@ Celle-ci va être compliquée… Il n'y a pas eu de recensement en 1945…
 *** DONE Limitations
  - Complétion de Wikidata
  - Timeouts
+* Misc [0/1]
+** TODO Ajouter des interludes pour reposer un peu
+* Snippets
+** Slide pour instruction
+#+BEGIN_SRC xml
+				<section>
+					<h2>FIXME</h2>
+					<div>
+						<pre><code>
+FIXME
+						</code></pre>
+					</div>
+					<ul class ="fragment">
+						<li>FIXME</li>
+						<li class="fragment">FIXME</li>
+					</ul>
+					<table class="fragment">
+						<thead>
+							<tr>
+								<th>FIXME</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>FIXME</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+#+END_SRC

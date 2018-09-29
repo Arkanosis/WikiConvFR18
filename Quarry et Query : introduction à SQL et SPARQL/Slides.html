@@ -128,16 +128,278 @@
 					</p>
 				</section>
 				<section>
-					<h2>*QL</h2>
+					<h2>Prélude</h2>
 					<ul>
-						<li>FIXME</li>
+						<li>Se rendre sur <a href="https://quarry.wmflabs.org/">https://quarry.wmflabs.org/</a></li>
+						<li class="fragment">C'est tout !</li>
+						<li class="fragment">Optionnel : ouvrir <a href="https://tools.wmflabs.org/sql-optimizer">https://tools.wmflabs.org/sql-optimizer</a></li>
 					</ul>
-					<p class="fragment">
-						FIXME
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
-					<ul class="fragment">
-						<li>FIXME</li>
+				</section>
+				<section>
+					<h2>Commentaires</h2>
+					<div>
+						<pre><code class="sql">
+-- ceci est un commentaire
+						</code></pre>
+					</div>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>USE</h2>
+					<div>
+						<pre><code class="sql">
+USE frwiki_p;
+						</code></pre>
+					</div>
+					<ul class ="fragment">
+						<li>Pas du SQL !</li>
+						<li class="fragment">Sélection d'une base de données</li>
+						<li class="fragment"><a href="https://quarry.wmflabs.org/query/278">876 bases disponibles</a> (au 29 septembre 2018)</li>
 					</ul>
+					<div class ="fragment">
+						<pre><code class="sql">
+SHOW databases LIKE "%_p";
+						</code></pre>
+					</div>
+					<div class ="fragment">
+						<pre><code class="sql">
+SHOW databases LIKE "%fr%_p";
+						</code></pre>
+					</div>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>LIMIT</h2>
+					<div>
+						<pre><code class="sql">
+-- requête ici
+LIMIT 10;
+						</code></pre>
+					</div>
+					<ul class="fragment">
+						<li>Utile pour tester</li>
+						<li class="fragment">Évite de surchager le serveur</li>
+					</ul>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>SELECT … FROM …</h2>
+					<div>
+						<pre><code class="sql">
+USE frwiki_p;
+SELECT *
+FROM user_groups
+LIMIT 5;
+						</code></pre>
+					</div>
+					<ul class="fragment">
+						<li>Sélectionne des données dans un tableau</li>
+						<li class="fragment">« * » : <em>toutes</em> les données</li>
+					</ul>
+					<table class="fragment">
+						<thead>
+							<tr>
+								<th>ug_user</th>
+								<th>ug_group</th>
+								<th>ug_expiry</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>3</td>
+								<td>bureaucrat</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>sysop</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>242</td>
+								<td>ipblock-exempt</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>311</td>
+								<td>sysop</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>624</td>
+								<td>bureaucrat</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>SELECT … FROM …</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>ug_user</th>
+								<th>ug_group</th>
+								<th>ug_expiry</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>3</td>
+								<td>bureaucrat</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>sysop</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>242</td>
+								<td>ipblock-exempt</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>311</td>
+								<td>sysop</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>624</td>
+								<td>bureaucrat</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					<ul class="fragment">
+						<li>Contenu du tableau documenté</li>
+					</ul>
+					<div class="fragment">
+						<pre><code class="sql">
+USE frwiki_p;
+DESCRIBE user_groups;
+						</code></pre>
+					</div>
+					<ul class="fragment">
+						<li><a href="https://www.mediawiki.org/wiki/Category:MediaWiki_database_tables">https://www.mediawiki.org/wiki/Category:MediaWiki_database_tables</a></li>
+					</ul>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>SELECT … FROM …</h2>
+					<div>
+						<pre><code class="sql">
+USE frwiki_p;
+SELECT ug_user, ug_group
+FROM user_groups
+LIMIT 5;
+						</code></pre>
+					</div>
+					<ul class="fragment">
+						<li>« ug_user, ug_group » : colonnes à sélectionner</li>
+					</ul>
+					<table class="fragment">
+						<thead>
+							<tr>
+								<th>ug_user</th>
+								<th>ug_group</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>3</td>
+								<td>bureaucrat</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>sysop</td>
+							</tr>
+							<tr>
+								<td>242</td>
+								<td>ipblock-exempt</td>
+							</tr>
+							<tr>
+								<td>311</td>
+								<td>sysop</td>
+							</tr>
+							<tr>
+								<td>624</td>
+								<td>bureaucrat</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>WHERE</h2>
+					<div>
+						<pre><code class="sql">
+USE frwiki_p;
+SELECT ug_user, ug_group
+FROM user_groups
+WHERE ug_group = 'bureaucrat'
+LIMIT 10;
+						</code></pre>
+					</div>
+					<div style="column-count: 3">
+						<ul class="fragment">
+							<li>« ug_group » : colonne</li>
+							<li>« 'bureaucrat' » : chaîne de caractères</li>
+						</ul>
+						<table class="fragment">
+							<thead>
+								<tr>
+									<th>ug_user</th>
+									<th>ug_group</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>3</td>
+									<td>bureaucrat</td>
+								</tr>
+								<tr>
+									<td>624</td>
+									<td>bureaucrat</td>
+								</tr>
+								<tr>
+									<td>38320</td>
+									<td>bureaucrat</td>
+								</tr>
+								<tr>
+									<td>66875</td>
+									<td>bureaucrat</td>
+								</tr>
+								<tr>
+									<td>108951</td>
+									<td>bureaucrat</td>
+								</tr>
+								<tr>
+									<td>131885</td>
+									<td>bureaucrat</td>
+								</tr>
+							</tbody>
+						</table>
+						<ul class="fragment">
+							<li>⇒ intégralité des résultats</li>
+						</ul>
+					</div>
 					<p>
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
@@ -163,6 +425,16 @@
 							<br>
 							<small style="font-size: 40%"><del>©</del> Planemad, DP</small>
 					</p>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>Prélude</h2>
+					<ul>
+						<li>Se rendre sur <a href="https://query.wikidata.org/">https://query.wikidata.org/</a></li>
+						<li class="fragment">C'est tout !</li>
+					</ul>
 					<p>
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>

@@ -100,5 +100,7 @@ Afficher la liste des remerciements, l'élection admin, les anniversaires, etc.)
  - FIXME [[https://www.mediawiki.org/wiki/ORES][ORES]]
   - Support des wikis : https://tools.wmflabs.org/ores-support-checklist/
   - Outils : https://www.mediawiki.org/wiki/ORES/Applications
+* Misc [0/1]
+** TODO Ajouter des interludes pour reposer un peu
 * Références
 ** https://upload.wikimedia.org/wikipedia/commons/7/74/La_lutte_contre_le_vandalisme_sur_Wikip%C3%A9dia_-_PSES_2012.pdf

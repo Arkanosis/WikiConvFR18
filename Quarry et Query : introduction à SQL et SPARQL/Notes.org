@@ -34,7 +34,7 @@ passionnantes que :
  - [[https://stats.wikimedia.org/v2/#/all-projects/contributing/new-registered-users/normal|bar|All|~total][> 50 Musers]], [[https://stats.wikimedia.org/v2/#/all-projects/contributing/new-pages/normal|bar|All|~total][> 300 Mpages]], [[https://stats.wikimedia.org/v2/#/all-projects/contributing/edits/normal|bar|All|~total][> 4 Gedits]] | [[https://tools.wmflabs.org/wikidata-todo/stats.php][> 50 Mitems, > 500 Mstatements]], [[http://www.rdfhdt.org/datasets/][> 7 Gtriples]]
  - https://quarry.wmflabs.org/ | https://query.wikidata.org/
 ** SQL + Quarry
-*** TODO Langage SQL [9/16]
+*** TODO Langage SQL [14/19]
  - [X] Commentaires
  - [X] USE
  - [X] LIMIT
@@ -44,9 +44,12 @@ passionnantes que :
  - [X] IN / BETWEEN / NOT
  - [X] LIKE
  - [X] DISTINCT
- - [ ] COUNT, SUM, AVG, MIN, MAX
- - [ ] GROUPBY
- - [ ] HAVING
+ - [X] COUNT
+ - [X] AS
+ - [X] GROUPBY
+ - [X] HAVING
+ - [X] ORDER BY ASC / DESC
+ - [ ] SUM, AVG, MIN, MAX
  - [ ] JOIN ON (INNER JOIN)
  - [ ] LEFT/RIGHT JOIN (LEFT/RIGHT OUTER JOIN)
  - [ ] FULL JOIN (FULL OUTER JOIN)

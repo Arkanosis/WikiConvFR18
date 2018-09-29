@@ -737,6 +737,184 @@ LIMIT 10;
 					</p>
 				</section>
 				<section>
+					<h2>COUNT</h2>
+					<div>
+						<pre><code class="sql">
+USE frwiki_p;
+SELECT COUNT(DISTINCT ug_group)
+FROM user_groups;
+						</code></pre>
+					</div>
+					<table class="fragment">
+						<thead>
+							<tr>
+								<th>COUNT(DISTINCT ug_group)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>13</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>AS</h2>
+					<div>
+						<pre><code class="sql">
+USE frwiki_p;
+SELECT COUNT(DISTINCT ug_group) AS nombre
+FROM user_groups;
+						</code></pre>
+					</div>
+					<table class="fragment">
+						<thead>
+							<tr>
+								<th>nombre</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>13</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>GROUP BY</h2>
+					<div>
+						<pre><code class="sql">
+USE frwiki_p;
+SELECT ug_group AS groupe, COUNT(ug_group) AS nombre
+FROM user_groups
+GROUP BY ug_group
+LIMIT 5;
+						</code></pre>
+					</div>
+					<table class="fragment">
+						<thead>
+							<tr>
+								<th>groupe</th>
+								<th>nombre</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>abusefilter</td>
+								<td>38</td>
+							</tr>
+							<tr>
+								<td>accountcreator</td>
+								<td>97</td>
+							</tr>
+							<tr>
+								<td>bot</td>
+								<td>117</td>
+							</tr>
+							<tr>
+								<td>bureaucrat</td>
+								<td>6</td>
+							</tr>
+							<tr>
+								<td>checkuser</td>
+								<td>4</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>HAVING</h2>
+					<div>
+						<pre><code class="sql">
+USE frwiki_p;
+SELECT ug_group AS groupe, COUNT(ug_group) AS nombre
+FROM user_groups
+GROUP BY ug_group
+HAVING nombre > 100;
+						</code></pre>
+					</div>
+					<table class="fragment">
+						<thead>
+							<tr>
+								<th>groupe</th>
+								<th>nombre</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>bot</td>
+								<td>117</td>
+							</tr>
+							<tr>
+								<td>ipblock-exempt</td>
+								<td>120</td>
+							</tr>
+							<tr>
+								<td>sysop</td>
+								<td>156</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>ORDER BY … ASC / DESC</h2>
+					<div>
+						<pre><code class="sql">
+USE frwiki_p;
+SELECT ug_group AS groupe, COUNT(ug_group) AS nombre
+FROM user_groups
+GROUP BY ug_group
+ORDER BY nombre ASC
+LIMIT 5;
+						</code></pre>
+					</div>
+					<table class="fragment">
+						<thead>
+							<tr>
+								<th>groupe</th>
+								<th>nombre</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>transwiki</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>confirmed</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>flow-bot</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>checkuser</td>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>oversight</td>
+								<td>4</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
 					<h2>Limitations de Quarry</h2>
 					<ul>
 						<li class="fragment">Incomplétude des réplicats<ul>

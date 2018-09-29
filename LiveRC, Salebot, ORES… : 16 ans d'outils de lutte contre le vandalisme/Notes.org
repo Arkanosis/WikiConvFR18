@@ -24,9 +24,10 @@ Popups, LiveRC, Twinkle, Salebot, ClueBot, Huggle, ORES, etc.
 ** TODO Définition vandalisme + stats
 ** Outils
 *** TODO Outils builtins
+ - Recent changes (2002 — Phase II)
+ - Watchlist (≤ mars 2002 — Phase II)
  - Undo (2002 — Phase III)
  - Rollback (≤ 2003 — historique SVN de Phase III)
- - FIXME recent changes, watchlist
  - [[https://meta.wikimedia.org/wiki/Help:Patrolled_edit/fr][Patrolled edits]] (9 août 2004)
  - Modifications récentes en direct (7 juillet 2017)
 *** TODO Extensions de MediaWiki

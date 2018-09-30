@@ -104,16 +104,16 @@ ORDER BY rev_timestamp;
  - [[https://tools.wmflabs.org/sql-optimizer][Liste des tables et suggestions d'optimisation]]
 
 ** SPARQL + Query
-*** TODO Langage SPARQL [2/15]
+*** TODO Langage SPARQL [9/24]
  - [X] Commentaires
- - [ ] ASK
+ - [X] ASK WHERE
+ - [X] PREFIX
+ - [X] SELECT WHERE
  - [X] LIMIT
- - [ ] SELECT WHERE
- - [ ] PREFIX
- - [ ] .
- - [ ] ;
- - [ ] ,
- - [ ] []
+ - [X] .
+ - [X] ;
+ - [X] ,
+ - [X] []
  - [ ] Chemins
  - [ ] FILTER
  - [ ] DISTINCT

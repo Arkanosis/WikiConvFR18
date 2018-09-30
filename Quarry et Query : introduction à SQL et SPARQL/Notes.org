@@ -104,7 +104,31 @@ ORDER BY rev_timestamp;
  - [[https://tools.wmflabs.org/sql-optimizer][Liste des tables et suggestions d'optimisation]]
 
 ** SPARQL + Query
-*** TODO Langage SPARQL
+*** TODO Langage SPARQL [2/15]
+ - [X] Commentaires
+ - [ ] ASK
+ - [X] LIMIT
+ - [ ] SELECT WHERE
+ - [ ] PREFIX
+ - [ ] .
+ - [ ] ;
+ - [ ] ,
+ - [ ] []
+ - [ ] Chemins
+ - [ ] FILTER
+ - [ ] DISTINCT
+ - [ ] COUNT
+ - [ ] BIND AS
+ - [ ] GROUP BY
+ - [ ] HAVING
+ - [ ] ORDER BY ASC() DESC()
+ - [ ] OPTIONAL
+ - [ ] BOUND
+ - [ ] SERVICE
+ - [ ] SERVICE [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Label_service][Label / Description]]
+ - [ ] SERVICE [AUTO_LANGUAGE]
+ - [ ] SERVICE [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Geospatial_search][around]]
+ - [ ] [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Federation][Requête fédérée]]
 *** TODO Requêtes [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual/fr#Linked_Data_Fragments_endpoint][LDF]]
 *** TODO Exemples de requêtes [1/2]
  - [ ] Quel était le neuvième pays le plus peuplé du monde en 1945 ?

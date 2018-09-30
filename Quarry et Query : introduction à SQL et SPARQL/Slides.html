@@ -117,7 +117,7 @@
 					</p>
 				</section>
 				<section>
-					<h2 style="margin-top: 10%; font-size:120%">Chapitre I<br>Quarry et SQL</h2>
+					<h2 style="margin-top: 10%; font-size:120%">Chapitre I<br>Quarry et SQL<br><span class="fragment">(Structured Query Language)</span></h2>
 					<p>
 							<a href="https://commons.wikimedia.org/wiki/File:Quarry-logo-icon.svg"><img src="images/1006px-Quarry-logo-icon.svg.png" style="height: 250px;"></a>
 							<br>
@@ -1256,7 +1256,7 @@ FIXME
 				</section>
 				<!-- TODO interlude -->
 				<section>
-					<h2 style="margin-top: 10%; font-size:120%">Chapitre II<br>Query et SPARQL<span class="fragment"> (et LDF)</span></h2>
+					<h2 style="margin-top: 10%; font-size:120%">Chapitre II<br>Query et SPARQL<span class="fragment"> (et LDF)</span><br><span class="fragment">(SPARQL Protocol and RDF Query Language<br>Linked Data Fragments)</span></h2>
 					<p>
 							<a href="https://commons.wikimedia.org/wiki/File:Wikidata-logo.svg"><img src="images/1050px-Wikidata-logo.svg.png" style="height: 250px;"></a>
 							<br>
@@ -1277,20 +1277,150 @@ FIXME
 					</p>
 				</section>
 				<section>
-					<h2>*QL</h2>
-					<ul>
-						<li>FIXME</li>
-					</ul>
-					<p class="fragment">
-						FIXME
-					</p>
-					<ul class="fragment">
-						<li>FIXME</li>
-					</ul>
+					<h2>Commentaires</h2>
+					<div>
+						<pre><code class="sparql">
+# ceci est un commentaire
+						</code></pre>
+					</div>
 					<p>
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
 				</section>
+				<section>
+					<h2>LIMIT</h2>
+					<div>
+						<pre><code class="sparql">
+# requête ici
+LIMIT 10;
+						</code></pre>
+					</div>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>Exemples</h2>
+					<blockquote>
+						Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ?
+					</blockquote>
+					<ul class="fragment">
+						<li>FIXME : tips</li>
+					</ul>
+					<div class="fragment">
+						<pre><code class="sparql">
+SELECT DISTINCT ?author ?authorLabel WHERE
+{
+  ?author
+    wdt:P31 wd:Q5 ;
+    wdt:P106/wdt:P279* wd:Q482980 ;
+    wdt:P570 ?death_date .
+  FILTER(
+    ?death_date >= "1947-01-01T00:00:00Z"^^xsd:dateTime &&
+    ?death_date < "1948-01-01T00:00:00Z"^^xsd:dateTime)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en" . }
+}
+						</code></pre>
+					</div>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>Exemples</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT DISTINCT ?author ?authorLabel WHERE
+{
+  ?author
+    wdt:P31 wd:Q5 ;
+    wdt:P106/wdt:P279* wd:Q482980 ;
+    wdt:P570 ?death_date .
+  FILTER(
+    ?death_date >= "1947-01-01T00:00:00Z"^^xsd:dateTime &&
+    ?death_date < "1948-01-01T00:00:00Z"^^xsd:dateTime)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en" . }
+}
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>author</th>
+								<th>authorLabel</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>wd:Q1254863</td>
+								<td>Alfred Meiche</td>
+							</tr>
+							<tr>
+								<td>wd:Q1287924</td>
+								<td>Edith Maude Hull</td>
+							</tr>
+							<tr>
+								<td>wd:Q1350286</td>
+								<td>Urban Gad</td>
+							</tr>
+							<tr>
+								<td>wd:Q1396058</td>
+								<td>Viktor Bibl</td>
+							</tr>
+							<tr>
+								<td colspan="2">…</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>Exemples</h2>
+					<blockquote>
+						Quel était le neuvième pays le plus peuplé du monde en 1945 ?
+					</blockquote>
+					<ul class="fragment">
+						<li>FIXME : tips</li>
+					</ul>
+					<div class="fragment">
+						<pre><code class="sparql">
+FIXME
+						</code></pre>
+					</div>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>Exemples</h2>
+					<div>
+						<pre><code class="sparql">
+FIXME
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>FIXME</th>
+								<th>FIXME</th>
+								<th>FIXME</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>FIXME</td>
+								<td>FIXME</td>
+								<td>FIXME</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<!-- TODO interlude -->
 				<section>
 					<h2>Limitations de Query</h2>
 					<ul>
@@ -1303,6 +1433,7 @@ FIXME
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
 				</section>
+				<!-- TODO interlude -->
 				<section>
 					<h2>[[Spécial:Journal/thanks]]</h2>
 					<p>

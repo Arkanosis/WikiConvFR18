@@ -57,7 +57,7 @@
 					</p>
 				</section>
 				<section>
-					<h2>Quarry et Query</h2>
+					<h2>Quarry et Query : points communs</h2>
 					<ul>
 						<li class="fragment">Bases de données</li>
 						<li class="fragment">Interface de requêtage</li>
@@ -70,7 +70,7 @@
 					</p>
 				</section>
 				<section>
-					<h2>Quarry vs Query</h2>
+					<h2>Quarry vs Query : différences</h2>
 					<table>
 						<thead>
 							<tr>
@@ -1487,6 +1487,180 @@ WHERE {
 					</p>
 				</section>
 				<section>
+					<h2>WHERE</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT ?someone
+WHERE {
+  ?someone wdt:P19                # personne née dans
+    [ wdt:P1376 wd:Q12559 ] .     #   le chef-lieu de l'Isère
+}
+						</code></pre>
+					</div>
+					<div class="fragment">
+						<pre><code class="sparql">
+SELECT ?someone
+WHERE {
+  ?someone wdt:P19/wdt:P1376 wd:Q12559 . #   personne née dans le chef-lieu de l'Isère
+}
+						</code></pre>
+					</div>
+					<div class="fragment">
+						<pre><code class="sparql">
+SELECT ?someone
+WHERE {
+  ?someone wdt:P19|wdt:P20 wd:Q1289 .     # personne née ou morte à Grenoble
+}
+						</code></pre>
+					</div>
+					<div class="fragment">
+						<pre><code class="sparql">
+SELECT ?someone
+WHERE {
+  ?someone (wdt:P19|wdt:P20)/wdt:P1376 wd:Q12559 . # personne née ou morte le chef-lieu de l'Isère
+}
+						</code></pre>
+					</div>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>WHERE</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT ?ancestor
+WHERE {
+   wd:Q3044 wdt:P22 ?ancestor # père de Charlemagne
+}
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>ancestor</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>wd:81212</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="fragment">
+						<pre><code class="sparql">
+SELECT ?ancestor
+WHERE {
+   wd:Q3044 wdt:P22/wdt:P22 ?ancestor # grand-père de Charlemagne
+}
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>ancestor</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>wd:3301</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>WHERE</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT ?ancestor
+WHERE {
+   wd:Q3044 wdt:P22+ ?ancestor # tous les ancêtres de sexe masculin de Charlemagne
+}
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>ancestor</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>wd:81212</td>
+							</tr>
+							<tr>
+								<td>wd:3301</td>
+							</tr>
+							<tr>
+								<td>wd:91392</td>
+							</tr>
+							<tr>
+								<td>wd:453739</td>
+							</tr>
+							<tr>
+								<td>…</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="fragment">
+						<pre><code class="sparql">
+SELECT ?ancestor
+WHERE {
+   wd:Q3044 (wdt:P22|wdt:P25)+ ?ancestor # tous les ancêtres de Charlemagne
+}
+						</code></pre>
+					</div>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>FILTER</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT ?someone ?date
+WHERE {
+  ?someone wdt:P19                # personne née dans
+    [ wdt:P1376 wd:Q12559 ] ;     #   le chef-lieu de l'Isère
+           wdt:P569 ?date .       #          née à une date
+  FILTER(YEAR(?date) >= 2000)     # date qui est postérieure à 2000
+}
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>someone</th>
+								<th>date</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>wd:Q1285458</td>
+								<td>1 janvier 2000</td>
+							</tr>
+							<tr>
+								<td>wd:Q56508189</td>
+								<td>23 août 2000</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>DISTINCT</h2>
+					<!-- TODO FIXME -->
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
 					<h2>Exemples</h2>
 					<blockquote>
 						Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ?
@@ -1613,7 +1787,7 @@ FIXME
 					<ul>
 						<li class="fragment">Incomplétude de Wikidata</li>
 						<li class="fragment">Incomplétude de la « somme de toutes les connaissances humaines »™</li>
-						<li class="fragment">Performances (timeouts, etc.)</li>
+						<li class="fragment">Performances (timeout à 60″, etc.)</li>
 						<li class="fragment">Accessibilité au grand public</li>
 					</ul>
 					<p>

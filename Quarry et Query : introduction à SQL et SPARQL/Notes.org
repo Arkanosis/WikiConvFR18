@@ -104,7 +104,7 @@ ORDER BY rev_timestamp;
  - [[https://tools.wmflabs.org/sql-optimizer][Liste des tables et suggestions d'optimisation]]
 
 ** SPARQL + Query
-*** TODO Langage SPARQL [9/24]
+*** TODO Langage SPARQL [11/24]
  - [X] Commentaires
  - [X] ASK WHERE
  - [X] PREFIX
@@ -114,8 +114,8 @@ ORDER BY rev_timestamp;
  - [X] ;
  - [X] ,
  - [X] []
- - [ ] Chemins
- - [ ] FILTER
+ - [X] Chemins
+ - [X] FILTER
  - [ ] DISTINCT
  - [ ] COUNT
  - [ ] BIND AS

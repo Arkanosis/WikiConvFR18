@@ -1648,14 +1648,357 @@ WHERE {
 							</tr>
 						</tbody>
 					</table>
-
 					<p>
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
 				</section>
 				<section>
 					<h2>DISTINCT</h2>
-					<!-- TODO FIXME -->
+					<div>
+						<pre><code class="sparql">
+SELECT ?someone
+WHERE {
+  ?someone wdt:P19|wdt:P20 wd:Q1289 .     # personne née ou morte à Grenoble
+}
+						</code></pre>
+					</div>
+					<div class="fragment">
+						<pre><code class="sparql">
+SELECT ?someone ?birth ?death
+WHERE {
+  ?someone wdt:P39 wd:Q29182 ;            # évèque
+           wdt:P19|wdt:P20 wd:Q1289 ;     #   né ou mort à Grenoble
+           wdt:P569 ?birth_date ;         #   né entre 1700 et 1720
+           wdt:P19 ?birth ;
+           wdt:P20 ?death .
+  FILTER(YEAR(?birth_date) > 1700 && YEAR(?birth_date) <= 1720)
+}
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>someone</th>
+								<th>birth</th>
+								<th>death</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>wd:Q532586</td>
+								<td>wd:Q1289</td>
+								<td>wd:Q2145</td>
+							</tr>
+							<tr>
+								<td>wd:Q3372466</td>
+								<td>wd:Q1289</td>
+								<td>wd:Q1289</td>
+							</tr>
+							<tr>
+								<td>wd:Q3372466</td>
+								<td>wd:Q1289</td>
+								<td>wd:Q1289</td>
+							</tr>
+							<tr>
+								<td colspan="3">…</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>DISTINCT</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT DISTINCT ?someone ?birth ?death
+WHERE {
+  ?someone wdt:P39 wd:Q29182 ;            # évèque
+           wdt:P19|wdt:P20 wd:Q1289 ;     #   né ou mort à Grenoble
+           wdt:P569 ?birth_date ;         #   né entre 1700 et 1720
+           wdt:P19 ?birth ;
+           wdt:P20 ?death .
+  FILTER(YEAR(?birth_date) > 1700 && YEAR(?birth_date) <= 1720)
+}
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>someone</th>
+								<th>birth</th>
+								<th>death</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>wd:Q23816517</td>
+								<td>wd:Q1289</td>
+								<td>wd:Q1289</td>
+							</tr>
+							<tr>
+								<td>wd:Q532586</td>
+								<td>wd:Q1289</td>
+								<td>wd:Q2145</td>
+							</tr>
+							<tr>
+								<td>wd:Q3372466</td>
+								<td>wd:Q1289</td>
+								<td>wd:Q1289</td>
+							</tr>
+							<tr>
+								<td>wd:Q16855838</td>
+								<td>wd:Q1289</td>
+								<td>wd:Q188776</td>
+							</tr>
+							<tr>
+								<td>wd:Q19944951</td>
+								<td>wd:Q1289</td>
+								<td>wd:Q207620</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>COUNT</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT (COUNT(DISTINCT ?someone) AS ?count)
+WHERE {
+  ?someone wdt:P39 wd:Q29182 ;            # évèque
+           wdt:P19|wdt:P20 wd:Q1289 ;     #   né ou mort à Grenoble
+           wdt:P569 ?birth_date ;         #   né entre 1700 et 1720
+           wdt:P19 ?birth ;
+           wdt:P20 ?death .
+  FILTER(YEAR(?birth_date) > 1700 && YEAR(?birth_date) <= 1720)
+}
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>count</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>5</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>GROUP BY</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT (COUNT(DISTINCT ?someone) AS ?count) ?death
+WHERE {
+  ?someone wdt:P39 wd:Q29182 ;            # évèque
+           wdt:P19|wdt:P20 wd:Q1289 ;     #   né ou mort à Grenoble
+           wdt:P569 ?birth_date ;         #   né entre 1700 et 1720
+           wdt:P19 ?birth;
+           wdt:P20 ?death .
+  FILTER(YEAR(?birth_date) > 1700 && YEAR(?birth_date) <= 1720)
+}
+GROUP BY ?death
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>count</th>
+								<th>death</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>2</td>
+								<td>wd:Q1289</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>wd:Q2145</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>wd:Q188776</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>wd:Q207620</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>HAVING</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT (COUNT(DISTINCT ?someone) AS ?count) ?death
+WHERE {
+  ?someone wdt:P39 wd:Q29182 ;            # évèque
+           wdt:P19|wdt:P20 wd:Q1289 ;     #   né ou mort à Grenoble
+           wdt:P569 ?birth_date ;         #   né entre 1700 et 1720
+           wdt:P19 ?birth;
+           wdt:P20 ?death .
+  FILTER(YEAR(?birth_date) > 1700 && YEAR(?birth_date) <= 1720)
+}
+GROUP BY ?death
+HAVING (?count > 1)
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>count</th>
+								<th>death</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>2</td>
+								<td>wd:Q1289</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>ORDER BY ASC / DESC</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT (COUNT(?someone) AS ?count) ?death
+WHERE {
+  ?someone wdt:P19 wd:Q1289 ;  # personne née ou morte à Grenoble
+           wdt:P20 ?death .    #          morte dans une ville donnée
+}
+GROUP BY ?death
+ORDER BY DESC(?count)
+LIMIT 5
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>count</th>
+								<th>death</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>69</td>
+								<td>wd:90</td>
+							</tr>
+							<tr>
+								<td>58</td>
+								<td>wd:1289</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>wd:456</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>wd:1917260</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>wd:23482</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>OPTIONAL</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT (COUNT(?someone) AS ?count) ?death
+WHERE {
+  ?someone wdt:P19 wd:Q1289 .  # personne née ou morte à Grenoble
+  OPTIONAL {
+    ?someone wdt:P20 ?death .  # personne morte dans une ville donnée
+  }
+}
+GROUP BY ?death
+ORDER BY DESC(?count)
+LIMIT 5
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>count</th>
+								<th>death</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>379</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>69</td>
+								<td>wd:90</td>
+							</tr>
+							<tr>
+								<td>58</td>
+								<td>wd:1289</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>wd:456</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>wd:1917260</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>BOUND</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT (COUNT(?someone) AS ?count)
+WHERE {
+  ?someone wdt:P19 wd:Q1289 .  # personne née ou morte à Grenoble
+  OPTIONAL {
+    ?someone wdt:P20 ?death .  # personne morte dans une ville donnée
+  }
+  FILTER(!BOUND(?death))
+}
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>count</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>379</td>
+							</tr>
+						</tbody>
+					</table>
 					<p>
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>

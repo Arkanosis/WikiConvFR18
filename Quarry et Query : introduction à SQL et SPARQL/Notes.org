@@ -104,7 +104,7 @@ ORDER BY rev_timestamp;
  - [[https://tools.wmflabs.org/sql-optimizer][Liste des tables et suggestions d'optimisation]]
 
 ** SPARQL + Query
-*** TODO Langage SPARQL [11/24]
+*** TODO Langage SPARQL [18/24]
  - [X] Commentaires
  - [X] ASK WHERE
  - [X] PREFIX
@@ -116,14 +116,14 @@ ORDER BY rev_timestamp;
  - [X] []
  - [X] Chemins
  - [X] FILTER
- - [ ] DISTINCT
- - [ ] COUNT
+ - [X] DISTINCT
+ - [X] COUNT AS
  - [ ] BIND AS
- - [ ] GROUP BY
- - [ ] HAVING
- - [ ] ORDER BY ASC() DESC()
- - [ ] OPTIONAL
- - [ ] BOUND
+ - [X] GROUP BY
+ - [X] HAVING
+ - [X] ORDER BY ASC() DESC()
+ - [X] OPTIONAL
+ - [X] BOUND
  - [ ] SERVICE
  - [ ] SERVICE [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Label_service][Label / Description]]
  - [ ] SERVICE [AUTO_LANGUAGE]

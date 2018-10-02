@@ -2277,35 +2277,6 @@ FIXME
 					</p>
 				</section>
 				<!-- TODO interlude -->
-				<!-- TODO requêtes LDF -->
-				<section>
-					<h2>Exemples</h2>
-					<div>
-						<pre><code class="sparql">
-FIXME
-						</code></pre>
-					</div>
-					<table class="fragment" style="font-size: 90%;">
-						<thead>
-							<tr>
-								<th>FIXME</th>
-								<th>FIXME</th>
-								<th>FIXME</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>FIXME</td>
-								<td>FIXME</td>
-								<td>FIXME</td>
-							</tr>
-						</tbody>
-					</table>
-					<p>
-						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
-					</p>
-				</section>
-				<!-- TODO interlude -->
 				<section>
 					<h2>Limitations de Query</h2>
 					<ul>
@@ -2314,6 +2285,34 @@ FIXME
 						<li class="fragment">Performances (timeout à 60″, etc.)</li>
 						<li class="fragment">Accessibilité au grand public</li>
 					</ul>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>LDF</h2>
+					<div>
+						<pre><code class="json">
+$ http https://query.wikidata.org/bigdata/ldf \
+  Accept:application/n-triples \
+  subject== \
+  predicate==wdt:P276 \
+  object==wd:Q1952944
+						</code></pre>
+					</div>
+					<div class="fragment">
+						<pre><code class="xml">
+&lt;http://www.wikidata.org/entity/Q26710079&gt; &lt;http://www.wikidata.org/prop/direct/P276&gt; &lt;http://www.wikidata.org/entity/Q1952944&gt; .
+&lt;http://www.wikidata.org/entity/Q3756779&gt; &lt;http://www.wikidata.org/prop/direct/P276&gt; &lt;http://www.wikidata.org/entity/Q1952944&gt; .
+&lt;http://www.wikidata.org/entity/Q28064689&gt; &lt;http://www.wikidata.org/prop/direct/P276&gt; &lt;http://www.wikidata.org/entity/Q1952944&gt; .
+&lt;http://www.wikidata.org/entity/Q3399376&gt; &lt;http://www.wikidata.org/prop/direct/P276&gt; &lt;http://www.wikidata.org/entity/Q1952944&gt; .
+&lt;http://www.wikidata.org/entity/Q47467243&gt; &lt;http://www.wikidata.org/prop/direct/P276&gt; &lt;http://www.wikidata.org/entity/Q1952944&gt; .
+&lt;http://www.wikidata.org/entity/Q17495773&gt; &lt;http://www.wikidata.org/prop/direct/P276&gt; &lt;http://www.wikidata.org/entity/Q1952944&gt; .
+&lt;http://www.wikidata.org/entity/Q17495274&gt; &lt;http://www.wikidata.org/prop/direct/P276&gt; &lt;http://www.wikidata.org/entity/Q1952944&gt; .
+&lt;http://www.wikidata.org/entity/Q17493925&gt; &lt;http://www.wikidata.org/prop/direct/P276&gt; &lt;http://www.wikidata.org/entity/Q1952944&gt; .
+…
+						</code></pre>
+					</div>
 					<p>
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>

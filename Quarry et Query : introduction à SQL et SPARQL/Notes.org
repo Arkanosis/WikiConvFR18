@@ -21,7 +21,7 @@ passionnantes que :
  - « Quel est le quarante-deuxième contributeur le plus prolifique de Wikispecies ? » ;
  - « Quelle est la durée moyenne entre deux éditions de l'article “Insomnie” entre 21 h et 7 h ? »
  - « Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ? »
-* Plan [4/11]
+* Plan [5/11]
   :PROPERTIES:
   :COOKIE_DATA: todo recursive
   :END:
@@ -54,7 +54,7 @@ passionnantes que :
  - [ ] LEFT/RIGHT JOIN (LEFT/RIGHT OUTER JOIN)
  - [ ] FULL JOIN (FULL OUTER JOIN)
  - [ ] EXPLAIN
-*** TODO Exemples de requêtes [3/3]
+*** TODO Exemples de requêtes [2/3]
  - [X] [[https://quarry.wmflabs.org/query/29880][Quelle est la page la plus modifiée de la Wikisource en suédois ?]]
 #+BEGIN_SRC sql
   USE svwikisource_p;
@@ -76,7 +76,7 @@ passionnantes que :
   ORDER BY num_edits DESC
   LIMIT 42;
 #+END_SRC
- - [X] [[https://quarry.wmflabs.org/query/29892][Quelle est la durée moyenne entre deux éditions de l'article “Insomnie” entre 21 h et 7 h ?]]
+ - [ ] [[https://quarry.wmflabs.org/query/29892][Quelle est la durée moyenne entre deux éditions de l'article “Insomnie” entre 21 h et 7 h ?]]
 #+BEGIN_SRC sql
 USE frwiki_p;
 SELECT DATE(rev_timestamp), COUNT(time), (SUM(time) - MAX(time)) / COUNT(time) AS mean_time FROM
@@ -90,7 +90,6 @@ WHERE (HOUR(rev_timestamp) > 19 OR HOUR(rev_timestamp) < 5)
 GROUP BY DATE(rev_timestamp) HAVING COUNT(time) > 1
 ORDER BY rev_timestamp;
 #+END_SRC
-*** TODO Trucs funs
 *** DONE Limitations
  - Replag
  - Données confidentielles
@@ -131,7 +130,7 @@ ORDER BY rev_timestamp;
  - [X] SERVICE [AUTO_COORDINATES]
  - [X] SERVICE [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Label_service][Label / Description]]
  - [X] SERVICE [AUTO_LANGUAGE]
-*** TODO Requêtes [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual/fr#Linked_Data_Fragments_endpoint][LDF]]
+*** DONE Requêtes [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual/fr#Linked_Data_Fragments_endpoint][LDF]]
 *** TODO Exemples de requêtes [1/2]
  - [ ] Quel était le neuvième pays le plus peuplé du monde en 1945 ?
 Celle-ci va être compliquée… Il n'y a pas eu de recensement en 1945…
@@ -150,8 +149,9 @@ Celle-ci va être compliquée… Il n'y a pas eu de recensement en 1945…
   }
 #+END_SRC
 
-*** TODO Trucs funs
- - http://wikidata.rawgraphs.io/?url=
+*** TODO Différents types de graphiques [0/2]
+ - [ ] Graphes built-in de Query
+ - [ ] http://wikidata.rawgraphs.io/?url=
 *** DONE Limitations
  - Complétion de Wikidata
  - Timeouts

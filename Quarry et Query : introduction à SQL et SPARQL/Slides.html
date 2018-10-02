@@ -2004,6 +2004,185 @@ WHERE {
 					</p>
 				</section>
 				<section>
+					<h2>SERVICE</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT ?someone
+WHERE {
+  SERVICE &lt;http://dbpedia.org/sparql&gt; {
+    ?someone &lt;http://dbpedia.org/property/birthDate&gt; "1918-09-06"^^xsd:date .
+  } .
+}
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>someone</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>&lt;http://dbpedia.org/resource/Edward_Ellis_(Royal_Navy_officer)&gt;</td>
+							</tr>
+							<tr>
+								<td>&lt;http://dbpedia.org/resource/Pat_Dalton_(footballer,_born_1918)&gt;</td>
+							</tr>
+							<tr>
+								<td>&lt;http://dbpedia.org/resource/Karl-Heinz_Scherfling&gt;</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="fragment">Fédération avec une liste restreinte de services<br>(<a href="https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual/SPARQL_Federation_endpoints">https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual/SPARQL_Federation_endpoints</a>)</p>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>SERVICE</h2>
+					<ul>
+						<li>Implémentation de fonctionnalités absentes de SPARQL :<ul>
+							<li class="fragment">Recherche spatiale (géospatiale)</li>
+							<li class="fragment">Parcours de graphe</li>
+							<li class="fragment">Labels Wikidata</li>
+							<li class="fragment">API de MediaWiki</li>
+						</ul></li>
+					</ul>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>SERVICE</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT ?place ?other_location
+WHERE {
+  wd:Q1952944 wdt:P625 ?museum_location .
+  SERVICE wikibase:around {
+    ?place wdt:P625 ?other_location .
+    bd:serviceParam wikibase:center ?museum_location .
+    bd:serviceParam wikibase:radius "0.1" .
+  } .
+  FILTER(?place != wd:Q1952944)
+}
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>place</th>
+								<th>other_location</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>wd:Q38618452</td>
+								<td>Point(5.73161 45.19413)</td>
+							</tr>
+							<tr>
+								<td>wd:Q869226</td>
+								<td>Point(5.73162 45.1943)</td>
+							</tr>
+							<tr>
+								<td>wd:Q3224346</td>
+								<td>Point(5.73222 45.1947)</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>SERVICE</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT ?place ?location
+WHERE {
+  SERVICE wikibase:around {
+    ?place wdt:P625 ?location .
+    bd:serviceParam wikibase:center "[AUTO_COORDINATES]" .
+    bd:serviceParam wikibase:radius "0.1" .
+  } .
+}
+						</code></pre>
+					</div>
+					<p class="fragment">
+						<a href="https://query.wikidata.org/#SELECT%20%3Fplace%20%3Flocation%0AWHERE%20%7B%0A%20%20wd%3AQ1952944%20wdt%3AP625%20%3Fmuseum_location%20.%0A%20%20SERVICE%20wikibase%3Aaround%20%7B%0A%20%20%20%20%3Fplace%20wdt%3AP625%20%3Flocation%20.%0A%20%20%20%20bd%3AserviceParam%20wikibase%3Acenter%20%3Fmuseum_location%20.%0A%20%20%20%20bd%3AserviceParam%20wikibase%3Aradius%20%220.1%22%20.%0A%20%20%7D%20.%0A%7D"><img src="images/Environs.jpg" style="width: 1000px;"></a>
+					</p>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>SERVICE</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT ?item ?itemLabel ?itemDescription
+WHERE {
+  ?item wdt:P276 wd:Q1952944 .
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "fr,en" .
+  } .
+}
+						</code></pre>
+					</div>
+					<table class="fragment" style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>item</th>
+								<th>itemLabel</th>
+								<th>itemDescription</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>wd:Q2179252</td>
+								<td>Contra-compositie XII</td>
+								<td>peinture de Theo van Doesburg</td>
+							</tr>
+							<tr>
+								<td>wd:Q3224346</td>
+								<td>Le Martyre de saint Pierre</td>
+								<td>peinture de Mattia Preti</td>
+							</tr>
+							<tr>
+								<td>wd:Q3399376</td>
+								<td>Portrait d'Anne-Jules de Noailles</td>
+								<td>peinture d'Hyacinthe Rigaud</td>
+							</tr>
+							<tr>
+								<td colspan="3">…</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>SERVICE</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT ?itemLabel ?itemDescription ?image
+WHERE {
+  ?item wdt:P276 wd:Q1952944 .
+  ?item wdt:P18 ?image .
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "[AUTO_LANGUAGE],fr,en" .
+  } .
+}
+						</code></pre>
+					</div>
+					<p class="fragment">
+						<a href="https://query.wikidata.org/#SELECT%20%3FitemLabel%20%3FitemDescription%20%3Fimage%0AWHERE%20%7B%0A%20%20%3Fitem%20wdt%3AP276%20wd%3AQ1952944%20.%0A%20%20%3Fitem%20wdt%3AP18%20%3Fimage%20.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%0A%20%20%20%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cfr%2Cen%22%20.%0A%20%20%7D%20.%0A%7D"><img src="images/Œuvres.jpg" style="width: 1000px;"></a>
+					</p>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
 					<h2>Exemples</h2>
 					<blockquote>
 						Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ?
@@ -2097,6 +2276,8 @@ FIXME
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
 				</section>
+				<!-- TODO interlude -->
+				<!-- TODO requêtes LDF -->
 				<section>
 					<h2>Exemples</h2>
 					<div>

@@ -104,7 +104,7 @@ ORDER BY rev_timestamp;
  - [[https://tools.wmflabs.org/sql-optimizer][Liste des tables et suggestions d'optimisation]]
 
 ** SPARQL + Query
-*** TODO Langage SPARQL [18/24]
+*** TODO Langage SPARQL [24/26]
  - [X] Commentaires
  - [X] ASK WHERE
  - [X] PREFIX
@@ -116,6 +116,7 @@ ORDER BY rev_timestamp;
  - [X] []
  - [X] Chemins
  - [X] FILTER
+ - [ ] REGEX
  - [X] DISTINCT
  - [X] COUNT AS
  - [ ] BIND AS
@@ -124,11 +125,12 @@ ORDER BY rev_timestamp;
  - [X] ORDER BY ASC() DESC()
  - [X] OPTIONAL
  - [X] BOUND
- - [ ] SERVICE
- - [ ] SERVICE [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Label_service][Label / Description]]
- - [ ] SERVICE [AUTO_LANGUAGE]
- - [ ] SERVICE [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Geospatial_search][around]]
- - [ ] [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Federation][Requête fédérée]]
+ - [X] SERVICE
+ - [X] [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Federation][Requête fédérée]]
+ - [X] SERVICE [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Geospatial_search][around]]
+ - [X] SERVICE [AUTO_COORDINATES]
+ - [X] SERVICE [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Label_service][Label / Description]]
+ - [X] SERVICE [AUTO_LANGUAGE]
 *** TODO Requêtes [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual/fr#Linked_Data_Fragments_endpoint][LDF]]
 *** TODO Exemples de requêtes [1/2]
  - [ ] Quel était le neuvième pays le plus peuplé du monde en 1945 ?

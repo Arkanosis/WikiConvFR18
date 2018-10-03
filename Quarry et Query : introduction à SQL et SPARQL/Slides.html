@@ -1215,8 +1215,24 @@ LIMIT 42;
 						<li><a href="https://www.mediawiki.org/wiki/Manual:Page_table">https://www.mediawiki.org/wiki/Manual:Page_table</a></li>
 						<li><a href="https://www.mediawiki.org/wiki/Manual:Revision_table">https://www.mediawiki.org/wiki/Manual:Revision_table</a></li>
 					<div class="fragment">
-						<pre><code class="sql">
-TODO FIXME
+						<pre style="width:100%; height: 80%"><code class="sql" style="max-height:100%">
+USE frwiki_p;
+SELECT date,
+       COUNT(time) + 1 AS edit_count,
+       AVG(time) AS average_interval
+FROM
+  (SELECT DATE(DATE_SUB(rev_timestamp, INTERVAL 10 HOUR)) AS date,
+          TIMESTAMPDIFF(MINUTE, @previous, rev_timestamp) AS time,
+          @previous := rev_timestamp
+   FROM (SELECT @previous := 0) AS _
+   JOIN revision
+   JOIN page ON page_id = rev_page
+   WHERE page_namespace = 0
+   AND page_title = 'Insomnie'
+   AND (HOUR(rev_timestamp) > 19 OR HOUR(rev_timestamp) < 5)
+   ORDER BY rev_timestamp) AS deltas
+WHERE time < 600
+GROUP BY date;
 						</code></pre>
 					</div>
 					<p>
@@ -1225,24 +1241,69 @@ TODO FIXME
 				</section>
 				<section>
 					<h2>Exemples</h2>
-					<div>
-						<pre><code class="sql">
-TODO FIXME
-						</code></pre>
-					</div>
-					<table class="fragment" style="font-size: 90%;">
+					<table style="font-size: 90%;">
 						<thead>
 							<tr>
-								<th>TODO FIXME</th>
-								<th>TODO FIXME</th>
-								<th>TODO FIXME</th>
+								<th>date</th>
+								<th>edit_count</th>
+								<th>average_interval</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>TODO FIXME</td>
-								<td>TODO FIXME</td>
-								<td>TODO FIXME</td>
+								<td>2005-06-02</td>
+								<td>2</td>
+								<td>248.0</td>
+							</tr>
+							<tr>
+								<td>2007-07-18</td>
+								<td>10</td>
+								<td>14.0</td>
+							</tr>
+							<tr>
+								<td>2008-12-07</td>
+								<td>12</td>
+								<td>0.9091</td>
+							</tr>
+							<tr>
+								<td>2009-05-16</td>
+								<td>2</td>
+								<td>68.0</td>
+							</tr>
+							<tr>
+								<td>2011-07-18</td>
+								<td>3</td>
+								<td>0.5</td>
+							</tr>
+							<tr>
+								<td>2012-09-25</td>
+								<td>2</td>
+								<td>448.0</td>
+							</tr>
+							<tr>
+								<td>2014-03-30</td>
+								<td>3</td>
+								<td>3.0</td>
+							</tr>
+							<tr>
+								<td>2016-10-03</td>
+								<td>5</td>
+								<td>4.75</td>
+							</tr>
+							<tr>
+								<td>2018-04-09</td>
+								<td>3</td>
+								<td>2.5</td>
+							</tr>
+							<tr>
+								<td>2018-08-03</td>
+								<td>2</td>
+								<td>1.0</td>
+							</tr>
+							<tr>
+								<td>2018-08-04</td>
+								<td>2</td>
+								<td>0.0</td>
 							</tr>
 						</tbody>
 					</table>

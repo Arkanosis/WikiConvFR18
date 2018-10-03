@@ -2387,13 +2387,97 @@ SELECT DISTINCT ?author ?authorLabel WHERE
 						Quel était le neuvième pays le plus peuplé du monde en 1945 ?
 					</blockquote>
 					<ul class="fragment">
-						<li>TODO FIXME : tips</li>
+						<li>On n'a malheureusement pas de données… :-/</li>
 					</ul>
+					<blockquote class="fragment">
+						Quel était le neuvième pays le plus peuplé du monde en 2016 ?
+					</blockquote>
 					<div class="fragment">
-						<pre><code class="sparql">
-TODO FIXME
+						<pre style="height: 80%"><code class="sparql" style="max-height:100%">
+SELECT ?countryLabel ?population ?date
+WHERE {
+  {
+    SELECT ?country (MAX(?date) AS ?date)
+    WHERE {
+      ?country wdt:P31 wd:Q6256 ;
+               p:P1082 [ pq:P585 ?date ] .
+      FILTER(YEAR(?date) <= 2016)
+    }
+    GROUP BY ?country
+  } .
+  ?country p:P1082 [ ps:P1082 ?population ; pq:P585 ?date ] .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr" . }
+}
+ORDER BY DESC(?population)
+LIMIT 9
 						</code></pre>
 					</div>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>Exemples</h2>
+					<blockquote>
+						Quel était le neuvième pays le plus peuplé du monde en 2016 ?
+					</blockquote>
+
+					<table style="font-size: 90%;">
+						<thead>
+							<tr>
+								<th>countryLabel</th>
+								<th>population</th>
+								<th>date</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>République populaire de Chine</td>
+								<td style="text-align:right">1 403 500 365</td>
+								<td>2016-07-01</td>
+							</tr>
+							<tr>
+								<td>Inde</td>
+								<td style="text-align:right">1 324 171 354</td>
+								<td>2016-07-01</td>
+							</tr>
+							<tr>
+								<td>États-Unis</td>
+								<td style="text-align:right">323 952 889</td>
+								<td>2016-07-09</td>
+							</tr>
+							<tr>
+								<td>Indonésie</td>
+								<td style="text-align:right">261 115 456</td>
+								<td>2016-01-01</td>
+							</tr>
+							<tr>
+								<td>Brésil</td>
+								<td style="text-align:right">206 081 432</td>
+								<td>2016-01-01</td>
+							</tr>
+							<tr>
+								<td>Pakistan</td>
+								<td style="text-align:right">193 203 476</td>
+								<td>2016-01-01</td>
+							</tr>
+							<tr>
+								<td>Nigeria</td>
+								<td style="text-align:right">182 202 000</td>
+								<td>2015-01-01</td>
+							</tr>
+							<tr>
+								<td>Bangladesh</td>
+								<td style="text-align:right">156 594 962</td>
+								<td>2013-01-01</td>
+							</tr>
+							<tr>
+								<td>Russie</td>
+								<td style="text-align:right">146 519 759</td>
+								<td>2016-01-01</td>
+							</tr>
+						</tbody>
+					</table>
 					<p>
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
@@ -2455,6 +2539,7 @@ $ http https://query.wikidata.org/bigdata/ldf \
 					</p>
 					<ul>
 						<li><a href="https://fr.wikipedia.org/wiki/User:Framawiki"><span style="color:gray">User:</span>Framawiki</a></li>
+						<li><a href="https://fr.wikipedia.org/wiki/User:Oodna"><span style="color:gray">User:</span>Oodna</a></li>
 					</ul>
 					<p>
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>

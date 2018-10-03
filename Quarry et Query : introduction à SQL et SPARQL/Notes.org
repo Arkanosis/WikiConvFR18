@@ -21,7 +21,7 @@ passionnantes que :
  - « Quel est le quarante-deuxième contributeur le plus prolifique de Wikispecies ? » ;
  - « Quelle est la durée moyenne entre deux éditions de l'article “Insomnie” entre 21 h et 7 h ? »
  - « Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ? »
-* Plan [7/10]
+* Plan [8/10]
   :PROPERTIES:
   :COOKIE_DATA: todo recursive
   :END:
@@ -77,10 +77,15 @@ passionnantes que :
  - [X] [[https://quarry.wmflabs.org/query/30142][Quelle est la durée moyenne entre deux éditions de l'article “Insomnie” entre 21 h et 7 h ?]]
 #+BEGIN_SRC sql
 USE frwiki_p;
-SELECT date, COUNT(time) + 1 AS edit_count, AVG(time) AS average_interval
+SELECT date,
+       COUNT(time) + 1 AS edit_count,
+       AVG(time) AS average_interval
 FROM
-  (SELECT DATE(DATE_SUB(rev_timestamp, INTERVAL 10 HOUR)) AS date, TIMESTAMPDIFF(MINUTE, @previous, rev_timestamp) AS time, @previous := rev_timestamp
-   FROM (SELECT @previous := 0) AS _, revision
+  (SELECT DATE(DATE_SUB(rev_timestamp, INTERVAL 10 HOUR)) AS date,
+          TIMESTAMPDIFF(MINUTE, @previous, rev_timestamp) AS time,
+          @previous := rev_timestamp
+   FROM (SELECT @previous := 0) AS _
+   JOIN revision
    JOIN page ON page_id = rev_page
    WHERE page_namespace = 0
    AND page_title = 'Insomnie'
@@ -129,9 +134,27 @@ GROUP BY date;
  - [X] SERVICE [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual#Label_service][Label / Description]]
  - [X] SERVICE [AUTO_LANGUAGE]
 *** DONE Requêtes [[https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual/fr#Linked_Data_Fragments_endpoint][LDF]]
-*** TODO Exemples de requêtes [1/2]
- - [ ] Quel était le neuvième pays le plus peuplé du monde en 1945 ?
-Celle-ci va être compliquée… Il n'y a pas eu de recensement en 1945…
+*** DONE Exemples de requêtes [2/2]
+ - [X] Quel était le neuvième pays le plus peuplé du monde en 1945 ?
+Celle-ci va être compliquée… Il n'y a pas eu de recensement en 1945… Donc 2016 :
+#+BEGIN_SRC sparql
+SELECT ?countryLabel ?population ?date
+WHERE {
+  {
+    SELECT ?country (MAX(?date) AS ?date)
+    WHERE {
+      ?country wdt:P31 wd:Q6256 ;
+               p:P1082 [ pq:P585 ?date ] .
+      FILTER(YEAR(?date) <= 2016)
+    }
+    GROUP BY ?country
+  } .
+  ?country p:P1082 [ ps:P1082 ?population ; pq:P585 ?date ] .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr" . }
+}
+ORDER BY DESC(?population)
+LIMIT 9
+#+END_SRC
  - [X] Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ?
 #+BEGIN_SRC sparql
   SELECT DISTINCT ?author ?authorLabel WHERE

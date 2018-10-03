@@ -171,6 +171,11 @@ SHOW databases LIKE "%_p";
 SHOW databases LIKE "%fr%_p";
 						</code></pre>
 					</div>
+					<div class ="fragment">
+						<pre><code class="sql">
+SHOW tables FROM "frwiki_p";
+						</code></pre>
+					</div>
 					<p>
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
@@ -914,7 +919,10 @@ LIMIT 5;
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
 				</section>
-				<!-- TODO interlude -->
+				<section data-background="images/1280px-Theba_geminata_variability.jpg">
+					<!-- https://commons.wikimedia.org/wiki/File:Theba_geminata_variability.jpg -->
+					<small style="font-size: 50%" class="caption">© H. Zell, CC-BY-SA 3.0</small>
+				</section>
 				<section>
 					<h2>INNER JOIN … ON</h2>
 					<div>
@@ -1044,7 +1052,10 @@ WHERE ug_group IN ('transwiki', 'confirmed', 'flow-bot');
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
 				</section>
-				<!-- TODO interlude -->
+				<section data-background="images/cute.jpg">
+					<!-- https://commons.wikimedia.org/wiki/File:Cute,_or_What%3F_(8408607745).jpg -->
+					<small style="font-size: 50%" class="caption">© Peter Trimming, CC-BY 2.0</small>
+				</section>
 				<section>
 					<h2>Exemples</h2>
 					<blockquote>
@@ -1205,7 +1216,7 @@ LIMIT 42;
 						<li><a href="https://www.mediawiki.org/wiki/Manual:Revision_table">https://www.mediawiki.org/wiki/Manual:Revision_table</a></li>
 					<div class="fragment">
 						<pre><code class="sql">
-FIXME
+TODO FIXME
 						</code></pre>
 					</div>
 					<p>
@@ -1216,22 +1227,22 @@ FIXME
 					<h2>Exemples</h2>
 					<div>
 						<pre><code class="sql">
-FIXME
+TODO FIXME
 						</code></pre>
 					</div>
 					<table class="fragment" style="font-size: 90%;">
 						<thead>
 							<tr>
-								<th>FIXME</th>
-								<th>FIXME</th>
-								<th>FIXME</th>
+								<th>TODO FIXME</th>
+								<th>TODO FIXME</th>
+								<th>TODO FIXME</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>FIXME</td>
-								<td>FIXME</td>
-								<td>FIXME</td>
+								<td>TODO FIXME</td>
+								<td>TODO FIXME</td>
+								<td>TODO FIXME</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1239,7 +1250,7 @@ FIXME
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
 				</section>
-				<!-- TODO interlude -->
+
 				<section>
 					<h2>Limitations de Quarry</h2>
 					<ul>
@@ -1254,7 +1265,10 @@ FIXME
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
 				</section>
-				<!-- TODO interlude -->
+				<section data-background="images/Cute_dog.jpg">
+					<!-- https://commons.wikimedia.org/wiki/File:Cute_dog.jpg -->
+					<small style="font-size: 50%" class="caption">© leisergu, CC-BY 2.0</small>
+				</section>
 				<section>
 					<h2 style="margin-top: 10%; font-size:120%">Chapitre II<br>Query et SPARQL<span class="fragment"> (et LDF)</span><br><span class="fragment">(SPARQL Protocol and RDF Query Language<br>Linked Data Fragments)</span></h2>
 					<p>
@@ -1648,6 +1662,52 @@ WHERE {
 							</tr>
 						</tbody>
 					</table>
+					<p>
+						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
+					</p>
+				</section>
+				<section>
+					<h2>REGEX</h2>
+					<div>
+						<pre><code class="sparql">
+SELECT ?someone ?name
+WHERE {
+  ?someone wdt:P19                 # personne née dans
+    [ wdt:P1376 wd:Q12559 ] ;      #   le chef-lieu de l'Isère
+           wdt:P1559 ?name .       #         ayant un nom en
+  FILTER(REGEX(?name, "^Mi.*in$")) # Mi … in
+}
+						</code></pre>
+					</div>
+					<div style="column-count: 2">
+						<table class="fragment" style="font-size: 90%;">
+							<thead>
+								<tr>
+									<th>someone</th>
+									<th>name</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>wd:Q3310830</td>
+									<td>Michel Savin</td>
+								</tr>
+								<tr>
+									<td>wd:Q235770</td>
+									<td>Miss Kittin</td>
+								</tr>
+								<tr>
+									<td>wd:Q954560</td>
+									<td>Michel Fugain</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="fragment">
+								<a href="https://commons.wikimedia.org/wiki/File:Grille_mots_crois%C3%A9s.JPG"><img src="images/Grille_mots_croisés.JPG" style="height: 400px;"></a>
+								<br>
+								<small style="font-size: 40%">© Joriola, CC-BY-SA 3.0</small>
+						</p>
+					</div>
 					<p>
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
@@ -2188,7 +2248,8 @@ WHERE {
 						Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ?
 					</blockquote>
 					<ul class="fragment">
-						<li>FIXME : tips</li>
+						<li>Occupation : wdt:P106</li>
+						<li>Sous-classe de : wdt:P279</li>
 					</ul>
 					<div class="fragment">
 						<pre><code class="sparql">
@@ -2265,18 +2326,21 @@ SELECT DISTINCT ?author ?authorLabel WHERE
 						Quel était le neuvième pays le plus peuplé du monde en 1945 ?
 					</blockquote>
 					<ul class="fragment">
-						<li>FIXME : tips</li>
+						<li>TODO FIXME : tips</li>
 					</ul>
 					<div class="fragment">
 						<pre><code class="sparql">
-FIXME
+TODO FIXME
 						</code></pre>
 					</div>
 					<p>
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
 				</section>
-				<!-- TODO interlude -->
+				<section data-background="images/Cute-kittens-12929201-1600-1200.jpg">
+					<!-- https://commons.wikimedia.org/wiki/File:Cute-kittens-12929201-1600-1200.jpg -->
+					<small style="font-size: 50%" class="caption">© Saving Public Ryan, CC-BY-SA 4.0</small>
+				</section>
 				<section>
 					<h2>Limitations de Query</h2>
 					<ul>
@@ -2317,7 +2381,10 @@ $ http https://query.wikidata.org/bigdata/ldf \
 						<small style="font-size: 50%" class="caption">© <a href="https://fr.wikipedia.org/wiki/User:Arkanosis"><span style="color:gray">User:</span>Arkanosis</a> — CC-BY 4.0 — WikiConvention francophone 2018</small>
 					</p>
 				</section>
-				<!-- TODO interlude -->
+				<section data-background="images/1280px-Cat_with_cute_eyes.jpeg">
+					<!-- https://commons.wikimedia.org/wiki/File:Cat_with_cute_eyes.jpeg -->
+					<small style="font-size: 50%" class="caption">© brownpau, CC-BY 2.0</small>
+				</section>
 				<section>
 					<h2>[[Spécial:Journal/thanks]]</h2>
 					<p>

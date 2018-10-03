@@ -21,7 +21,7 @@ passionnantes que :
  - « Quel est le quarante-deuxième contributeur le plus prolifique de Wikispecies ? » ;
  - « Quelle est la durée moyenne entre deux éditions de l'article “Insomnie” entre 21 h et 7 h ? »
  - « Des œuvres de quels artistes le domaine public s'enrichira-t-il en 2018 ? »
-* Plan [5/11]
+* Plan [6/10]
   :PROPERTIES:
   :COOKIE_DATA: todo recursive
   :END:
@@ -34,7 +34,7 @@ passionnantes que :
  - [[https://stats.wikimedia.org/v2/#/all-projects/contributing/new-registered-users/normal|bar|All|~total][> 50 Musers]], [[https://stats.wikimedia.org/v2/#/all-projects/contributing/new-pages/normal|bar|All|~total][> 300 Mpages]], [[https://stats.wikimedia.org/v2/#/all-projects/contributing/edits/normal|bar|All|~total][> 4 Gedits]] | [[https://tools.wmflabs.org/wikidata-todo/stats.php][> 50 Mitems, > 500 Mstatements]], [[http://www.rdfhdt.org/datasets/][> 7 Gtriples]]
  - https://quarry.wmflabs.org/ | https://query.wikidata.org/
 ** SQL + Quarry
-*** TODO Langage SQL [15/19]
+*** TODO Langage SQL [15/17]
  - [X] Commentaires
  - [X] USE
  - [X] LIMIT
@@ -51,8 +51,6 @@ passionnantes que :
  - [X] ORDER BY ASC / DESC
  - [X] JOIN ON (INNER JOIN)
  - [ ] SUM, AVG, MIN, MAX
- - [ ] LEFT/RIGHT JOIN (LEFT/RIGHT OUTER JOIN)
- - [ ] FULL JOIN (FULL OUTER JOIN)
  - [ ] EXPLAIN
 *** TODO Exemples de requêtes [2/3]
  - [X] [[https://quarry.wmflabs.org/query/29880][Quelle est la page la plus modifiée de la Wikisource en suédois ?]]
@@ -103,7 +101,7 @@ ORDER BY rev_timestamp;
  - [[https://tools.wmflabs.org/sql-optimizer][Liste des tables et suggestions d'optimisation]]
 
 ** SPARQL + Query
-*** TODO Langage SPARQL [24/26]
+*** DONE Langage SPARQL [25/25]
  - [X] Commentaires
  - [X] ASK WHERE
  - [X] PREFIX
@@ -115,10 +113,9 @@ ORDER BY rev_timestamp;
  - [X] []
  - [X] Chemins
  - [X] FILTER
- - [ ] REGEX
+ - [X] REGEX
  - [X] DISTINCT
  - [X] COUNT AS
- - [ ] BIND AS
  - [X] GROUP BY
  - [X] HAVING
  - [X] ORDER BY ASC() DESC()

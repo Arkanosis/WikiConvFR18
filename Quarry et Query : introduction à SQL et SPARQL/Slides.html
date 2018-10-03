@@ -1787,7 +1787,7 @@ WHERE {
 						<pre><code class="sparql">
 SELECT ?someone ?birth ?death
 WHERE {
-  ?someone wdt:P39 wd:Q29182 ;            # évèque
+  ?someone wdt:P39 wd:Q29182 ;            # évêque
            wdt:P19|wdt:P20 wd:Q1289 ;     #   né ou mort à Grenoble
            wdt:P569 ?birth_date ;         #   né entre 1700 et 1720
            wdt:P19 ?birth ;
@@ -1835,7 +1835,7 @@ WHERE {
 						<pre><code class="sparql">
 SELECT DISTINCT ?someone ?birth ?death
 WHERE {
-  ?someone wdt:P39 wd:Q29182 ;            # évèque
+  ?someone wdt:P39 wd:Q29182 ;            # évêque
            wdt:P19|wdt:P20 wd:Q1289 ;     #   né ou mort à Grenoble
            wdt:P569 ?birth_date ;         #   né entre 1700 et 1720
            wdt:P19 ?birth ;
@@ -1890,7 +1890,7 @@ WHERE {
 						<pre><code class="sparql">
 SELECT (COUNT(DISTINCT ?someone) AS ?count)
 WHERE {
-  ?someone wdt:P39 wd:Q29182 ;            # évèque
+  ?someone wdt:P39 wd:Q29182 ;            # évêque
            wdt:P19|wdt:P20 wd:Q1289 ;     #   né ou mort à Grenoble
            wdt:P569 ?birth_date ;         #   né entre 1700 et 1720
            wdt:P19 ?birth ;
@@ -1921,7 +1921,7 @@ WHERE {
 						<pre><code class="sparql">
 SELECT (COUNT(DISTINCT ?someone) AS ?count) ?death
 WHERE {
-  ?someone wdt:P39 wd:Q29182 ;            # évèque
+  ?someone wdt:P39 wd:Q29182 ;            # évêque
            wdt:P19|wdt:P20 wd:Q1289 ;     #   né ou mort à Grenoble
            wdt:P569 ?birth_date ;         #   né entre 1700 et 1720
            wdt:P19 ?birth;
@@ -1967,7 +1967,7 @@ GROUP BY ?death
 						<pre><code class="sparql">
 SELECT (COUNT(DISTINCT ?someone) AS ?count) ?death
 WHERE {
-  ?someone wdt:P39 wd:Q29182 ;            # évèque
+  ?someone wdt:P39 wd:Q29182 ;            # évêque
            wdt:P19|wdt:P20 wd:Q1289 ;     #   né ou mort à Grenoble
            wdt:P569 ?birth_date ;         #   né entre 1700 et 1720
            wdt:P19 ?birth;

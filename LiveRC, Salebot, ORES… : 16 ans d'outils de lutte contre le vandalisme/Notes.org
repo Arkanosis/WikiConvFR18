@@ -62,7 +62,7 @@ Popups, LiveRC, Twinkle, Salebot, ClueBot, Huggle, ORES, etc.
  - [ ] [[https://fr.wikipedia.org/wiki/Projet:JavaScript/Notices/BandeauxFaciles][BandeauxFaciles]] (28 novembre 2009) ([[][Images]])
  - [ ] [[https://fr.wikipedia.org/wiki/Utilisateur:0x010C/script#DrapeauJaune.js][DrapeauJaune]] (2015) ([[https://commons.wikimedia.org/wiki/Category:DrapeauJaune][Images]])
  - [ ] [[https://fr.wikipedia.org/wiki/MediaWiki:Gadget-C_helper.js][C-helper]] (2016) ([[https://commons.wikimedia.org/wiki/Category:Chelper][Images]])
-*** TODO Gros outils (on ou off-wiki) [8/19]
+*** TODO Gros outils (on ou off-wiki) [19/19]
  - [X] CryptoDerk Vandal Fighter, CDVF, [[https://en.wikipedia.org/wiki/User:Henna/VF][Vandal Fighter]] (mai 2005, Java, basé sur IRC, open-source, sources introuvables, binaire sur archive.org) ([[https://commons.wikimedia.org/wiki/Category:Vandal_Fighter][Images]])
  - [X] [[https://en.wikipedia.org/wiki/User:Lupin/Anti-vandal_tool][Lupin's Anti-vandal tool]] (11 novembre 2005, JS, basé sur RSS) ([[][Images]])
  - [X] [[https://en.wikipedia.org/wiki/User:AmiDaniel/VandalProof][VandalProof]] (2006, VB6, Windows uniquement, basé sur RSS, Freeware) ([[https://commons.wikimedia.org/wiki/Category:VandalProof][Images]])
@@ -71,20 +71,20 @@ Popups, LiveRC, Twinkle, Salebot, ClueBot, Huggle, ORES, etc.
  - [X] [[https://meta.wikimedia.org/wiki/WikiMonitor][WikiMonitor]] (2007, VB6, Windows uniquement, GPL, basé sur IRC) ([[][Images]])
  - [X] [[https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:LiveRC/Documentation/Pr%C3%A9sentation/fr][LiveRC]] (2007, JS, basé sur API introduite en 2005, CC-BY-SA 3.0 + MIT/X11) ([[https://commons.wikimedia.org/wiki/Category:LiveRC][Images]])
  - [X] [[https://en.wikipedia.org/wiki/Wikipedia:Huggle][Huggle]] (2008, VB.NET pour Windows, C++ et Python puis C++ et JS, basé sur IRC) ([[https://commons.wikimedia.org/wiki/Category:Huggle][Images]])
- - [ ] [[https://en.wikipedia.org/wiki/User:Kingpin13/WikiAlerter][WikiAlerter]] (2009, C# pour Windows, sources introuvables, licence inconnue) ([[][Images]])
- - [ ] [[https://en.wikipedia.org/wiki/Wikipedia:Igloo][Igloo]] (2009, JS, basé sur l'API) ([[][Images]]) ([[https://commons.wikimedia.org/wiki/Category:Igloo_(browser_add-on)][Images]])
- - [ ] [[https://fr.wikipedia.org/wiki/Utilisateur:Dr_Brains/LiveAbuseLog/Documentation][LiveAbuseLog]] (2010, JS, basé sur API, CC-BY-SA 3.0) ([[https://commons.wikimedia.org/wiki/File:LiveAbuseLog.jpg][Images]])
- - [ ] [[https://es.wikipedia.org/wiki/Usuario:Ignacio_Icke/Schrader][Schrader]] (2010, Ruby, basé sur API, GPL) ([[https://commons.wikimedia.org/wiki/Category:Schrader][Images]])
- - [ ] [[https://meta.wikimedia.org/wiki/User:Krinkle/Tools/Real-Time_Recent_Changes][RTRC]] (2010, JS, basé sur l'API, MIT/Expat) ([[https://commons.wikimedia.org/wiki/Category:RTRC][Images]])
- - [ ] [[https://en.wikipedia.org/wiki/Wikipedia:STiki][STiki]] (2010, Java, Windows & macOS, basé sur IRC, GPL) ([[https://commons.wikimedia.org/wiki/Category:STiki][Images]])
+ - [X] [[https://en.wikipedia.org/wiki/User:Kingpin13/WikiAlerter][WikiAlerter]] (2009, C# pour Windows, sources introuvables, licence inconnue) ([[][Images]])
+ - [X] [[https://en.wikipedia.org/wiki/Wikipedia:Igloo][Igloo]] (2009, JS, basé sur l'API) ([[][Images]]) ([[https://commons.wikimedia.org/wiki/Category:Igloo_(browser_add-on)][Images]])
+ - [X] [[https://fr.wikipedia.org/wiki/Utilisateur:Dr_Brains/LiveAbuseLog/Documentation][LiveAbuseLog]] (2010, JS, basé sur API, CC-BY-SA 3.0) ([[https://commons.wikimedia.org/wiki/File:LiveAbuseLog.jpg][Images]])
+ - [X] [[https://es.wikipedia.org/wiki/Usuario:Ignacio_Icke/Schrader][Schrader]] (2010, Ruby, basé sur API, GPL) ([[https://commons.wikimedia.org/wiki/Category:Schrader][Images]])
+ - [X] [[https://meta.wikimedia.org/wiki/User:Krinkle/Tools/Real-Time_Recent_Changes][RTRC]] (2010, JS, basé sur l'API, MIT/Expat) ([[https://commons.wikimedia.org/wiki/Category:RTRC][Images]])
+ - [X] [[https://en.wikipedia.org/wiki/Wikipedia:STiki][STiki]] (2010, Java, Windows & macOS, basé sur IRC, GPL) ([[https://commons.wikimedia.org/wiki/Category:STiki][Images]])
 Classification automatique de ClueBot NG, distribution des relectures : [[https://upload.wikimedia.org/wikipedia/commons/c/cc/Spatio-Temporal_Analysis_of_Revision_Metadata_and_the_STiki_Anti-Vandalism_Tool.pdf][Papier]]
- - [ ] [[https://en.wikipedia.org/wiki/Wikipedia:Snuggle][Snuggle]] (2013, Python, JS, wmflabs, MIT/Expat) ([[https://commons.wikimedia.org/wiki/Category:Snuggle][Images]])
+ - [X] [[https://en.wikipedia.org/wiki/Wikipedia:Snuggle][Snuggle]] (2013, Python, JS, wmflabs, MIT/Expat) ([[https://commons.wikimedia.org/wiki/Category:Snuggle][Images]])
 Observation + classification + messages mais pas de revert
- - [ ] [[https://en.wikipedia.org/wiki/User:Jfmantis/WikiPatroller][WikiPatroller]] (2013, Java pour Android, basé sur l'API, [[https://github.com/jfmantis/WikiPatroller][open-source]]) ([[][Images]])
- - [ ] [[https://tools.wmflabs.org/raun/?language=pt&project=wikipedia&userlang=en][ra·un]] ([[][Images]])
- - [ ] [[https://meta.wikimedia.org/wiki/CopyPatrol][CopyPatrol]] (2016) + https://en.wikipedia.org/wiki/User:EranBot ([[][Images]])
- - [ ] [[https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Wmrc][wmrc]] (2018, Kotlin pour Android, basé sur SSE) [pub, coi, événement récent] ([[][Images]])
-   - [[https://wikitech.wikimedia.org/wiki/Obsolete:RCStream][RCStream]] en 2014 ⇒ jamais utilisé
+ - [X] [[https://en.wikipedia.org/wiki/User:Jfmantis/WikiPatroller][WikiPatroller]] (2013, Java pour Android, basé sur l'API, [[https://github.com/jfmantis/WikiPatroller][open-source]]) ([[https://commons.wikimedia.org/wiki/File:WikiPatroller_screenshot.png][Images]])
+ - [X] [[https://tools.wmflabs.org/raun/?language=pt&project=wikipedia&userlang=en][ra·un]] (2013, PHP, basé sur SSE, puis RCStream + API, ORES) ([[][Images]])
+   - [[https://wikitech.wikimedia.org/wiki/Obsolete:RCStream][RCStream]] en 2014
+ - [X] [[https://meta.wikimedia.org/wiki/CopyPatrol][CopyPatrol]] (2016) + https://en.wikipedia.org/wiki/User:EranBot ([[][Images]])
+ - [X] [[https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Wmrc][wmrc]] (2018, Kotlin pour Android, basé sur SSE) [pub, coi, événement récent] ([[][Images]])
    - [[https://wikitech.wikimedia.org/wiki/EventStreams][EventStreams]] en 2016
 *** TODO Bots [0/10]
 cf. https://en.wikipedia.org/wiki/User:Emijrp/Anti-vandalism_bot_census (interdits sur de:)

@@ -105,16 +105,16 @@ Afficher la liste des remerciements, l'élection admin, les anniversaires, etc.)
   - Support des wikis : https://tools.wmflabs.org/ores-support-checklist/
   - Outils : https://www.mediawiki.org/wiki/ORES/Applications
 *** TODO Canaux de communication
-**** IRC @ Freenode [[https://en.wikipedia.org/wiki/Wikipedia:IRC#Channels_for_specific_tasks][(en]], [[https://fr.wikipedia.org/wiki/Aide:IRC#Canaux_consacr%C3%A9s_%C3%A0_Wikip%C3%A9dia_sur_irc.freenode.net][fr]]) [0/7]
- - [ ] [[https://upload.wikimedia.org/wikipedia/commons/0/01/Wikipedia_IRC_Feed.png][Screenshot]] $lang.wikipedia sur irc.wikimedia.org
- - [ ] #countervandalism
- - [ ] #cvn-wp-en
- - [ ] #wikipedia-fr
- - [ ] #wikipedia-fr-liverc
- - [ ] #wikipedia-fr-admin
- - [ ] #vandalism-fr-wp (Salebot)
-**** XMPP [0/1]
- - [ ] wikipedia-fr@muc.jappix.com
+**** IRC @ Freenode [[https://en.wikipedia.org/wiki/Wikipedia:IRC#Channels_for_specific_tasks][(en]], [[https://fr.wikipedia.org/wiki/Aide:IRC#Canaux_consacr%C3%A9s_%C3%A0_Wikip%C3%A9dia_sur_irc.freenode.net][fr]]) [7/7]
+ - [X] [[https://upload.wikimedia.org/wikipedia/commons/0/01/Wikipedia_IRC_Feed.png][Screenshot]] $lang.wikipedia sur irc.wikimedia.org
+ - [X] #countervandalism
+ - [X] #cvn-wp-en
+ - [X] #wikipedia-fr
+ - [X] #wikipedia-fr-liverc
+ - [X] #wikipedia-fr-admin
+ - [X] #vandalism-fr-wp (Salebot)
+**** XMPP [1/1]
+ - [X] wikipedia-fr@muc.jappix.com
 * Misc [0/1]
 ** TODO Ajouter des interludes pour reposer un peu
 * Références

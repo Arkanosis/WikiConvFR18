@@ -24,17 +24,17 @@ Popups, LiveRC, Twinkle, Salebot, ClueBot, Huggle, ORES, etc.
 ** TODO Définition vandalisme + stats
 ** Outils
 *** TODO Outils builtins
- - Recent changes (2002 — Phase II) ([[][Images]])
- - Watchlist (≤ mars 2002 — Phase II) ([[][Images]])
- - Historique + undo (2002 — Phase III) ([[][Images]])
- - Rollback (≤ 2003 — historique SVN de Phase III) ([[][Images]])
+ - Recent changes (2002 — Phase II) ([[https://commons.wikimedia.org/wiki/File:Modifications_r%C3%A9centes.jpg][Image]], [[https://commons.wikimedia.org/wiki/File:Modifications_r%C3%A9centes.png][Image]])
+ - Watchlist (≤ mars 2002 — Phase II) ([[https://commons.wikimedia.org/wiki/File:Aide_FR_Liste_de_suivi.png][Images]])
+ - Historique + undo (2002 — Phase III) ([[https://commons.wikimedia.org/wiki/File:Aide_FR_Historique.png][Images]], [[https://commons.wikimedia.org/wiki/File:1.2-B_fig._2.png][Image]])
+ - Rollback (≤ 2003 — historique SVN de Phase III) ([[https://commons.wikimedia.org/wiki/File:Revoquer_contribs.png][Images]], [[https://commons.wikimedia.org/wiki/File:Revoquer_diff.png][Image]])
  - Protection (?) ([[][Images]])
  - [[https://meta.wikimedia.org/wiki/Help:Patrolled_edit/fr][Patrolled edits]] (9 août 2004) ([[https://commons.wikimedia.org/wiki/File:French_Wikipedia_-_Diff_Patrol.png][Images]], [[https://commons.wikimedia.org/wiki/File:Commons_Mark_as_patrolled.png][Images]])
  - Recent changes RSS (?) ([[][Images]])
  - Checkusers (?)
  - Captchas (?)
  - Modifications récentes Wikidata (2015)
- - Modifications récentes modernes (7 juillet 2017) ([[][Images]])
+ - Modifications récentes modernes (7 juillet 2017) ([[https://commons.wikimedia.org/wiki/Category:New_filters_for_edit_review][Images]])
    - filtres
    - couleurs
    - en direct
@@ -55,7 +55,7 @@ Popups, LiveRC, Twinkle, Salebot, ClueBot, Huggle, ORES, etc.
  - [[https://fr.wikipedia.org/wiki/MediaWiki:Gadget-BlocageDeluxe.js][BlocageDeluxe]] (3 novembre 2006) ([[][Images]])
  - [[https://en.wikipedia.org/wiki/Wikipedia:Twinkle][Twinklefluff / Twinkle]] (21 janvier 2007) ([[https://commons.wikimedia.org/wiki/Category:Twinkle_(software)][Images]])
  - [[https://fr.wikipedia.org/wiki/Utilisateur:Maloq/AdvancedContribs/Documentation][AdvancedContribs]] (27 juillet 2007) ([[][Images]])
- - [[https://en.wikipedia.org/wiki/User:Gracenotes/rollback.js][rollback.js]] (2008, en) [[https://en.wikipedia.org/wiki/User:Ilmari_Karonen/rollbacksummary.js][rollbacksummary]] (2008, en) [[https://fr.wikipedia.org/wiki/Utilisateur:Stef48/revocation.js][revocation.js]] (2009, fr), [[https://meta.wikimedia.org/wiki/User:Hoo_man/Scripts/Smart_rollback][Smart rollback]] (2011, en) ([[][Images]])
+ - [[https://en.wikipedia.org/wiki/User:Gracenotes/rollback.js][rollback.js]] (2008, en) [[https://de.wikipedia.org/wiki/Benutzer:DerHexer/rollback][rollback.js]] (2008, de) [[https://en.wikipedia.org/wiki/User:Ilmari_Karonen/rollbacksummary.js][rollbacksummary]] (2008, en) [[https://fr.wikipedia.org/wiki/Utilisateur:Stef48/revocation.js][revocation.js]] (2009, fr) [[https://meta.wikimedia.org/wiki/User:Hoo_man/Scripts/Smart_rollback][Smart rollback]] (2011, en) ([[][Images]])
  - FastButtons (2008, es) ([[https://commons.wikimedia.org/wiki/File:FastButtons_2.png][Images]])
  - [[https://fr.wikipedia.org/wiki/Utilisateur:Arkanosis/xpatrol.js][xpatrol]] (10 novembre 2009) + [[https://fr.wikipedia.org/w/index.php?title=Utilisateur:Arkanosis/xdone.js][xdone]] (2013) [pub, coi] ([[][Images]])
  - [[https://fr.wikipedia.org/wiki/Projet:JavaScript/Notices/BandeauxFaciles][BandeauxFaciles]] (28 novembre 2009) ([[][Images]])

@@ -17,7 +17,7 @@ fois nombreux et très différents les uns des autres.
 Cette conférence consistera en un panorama plus ou moins chronologique et
 nécessairement non-exhaustif des outils en question : IRC, Vandal Fighter,
 Popups, LiveRC, Twinkle, Salebot, ClueBot, Huggle, ORES, etc.
-* Télécharger les images
+* TODO Télécharger les images
 * Plan [5/7]
 ** DONE Outils builtins [15/15]
  - [X] Modifier
@@ -99,11 +99,11 @@ Afficher la liste des remerciements, l'élection admin, les anniversaires, etc.)
  - [ ] CVNbot (original, Perl, Python, jamais actif ?), SWMTBot → SWBot → CVNbot → [[https://meta.wikimedia.org/wiki/Countervandalism_Network/Bots#CVN-ClerkBot][CVN bots]] (≤ 2010, C#, IRC)
  - [ ] [[https://fr.wikipedia.org/wiki/Utilisateur:Blockbot][Blockbot]] (2013-2015, fr, PHP, sources introuvables)
  - [ ] https://es.wikipedia.org/wiki/Usuario:SeroBOT (ORES)
-** TODO Infrastructures [0/2]
- - [ ] https://cvn.wmflabs.org/
- - [ ] [[https://www.mediawiki.org/wiki/ORES][ORES]]
-  - Support des wikis : https://tools.wmflabs.org/ores-support-checklist/
-  - Outils : https://www.mediawiki.org/wiki/ORES/Applications
+** TODO Infrastructures [2/2]
+ - [X] https://cvn.wmflabs.org/
+ - [X] [[https://www.mediawiki.org/wiki/ORES][ORES]]
+   - Support des wikis : https://tools.wmflabs.org/ores-support-checklist/
+   - Outils : https://www.mediawiki.org/wiki/ORES/Applications
 ** DONE Canaux de communication
 *** IRC @ Freenode [[https://en.wikipedia.org/wiki/Wikipedia:IRC#Channels_for_specific_tasks][(en]], [[https://fr.wikipedia.org/wiki/Aide:IRC#Canaux_consacr%C3%A9s_%C3%A0_Wikip%C3%A9dia_sur_irc.freenode.net][fr]]) [7/7]
  - [X] [[https://upload.wikimedia.org/wikipedia/commons/0/01/Wikipedia_IRC_Feed.png][Screenshot]] $lang.wikipedia sur irc.wikimedia.org

@@ -539,7 +539,7 @@ USE frwiki_p;
 SELECT ug_user, ug_group
 FROM user_groups
 WHERE ug_group IN
-  ('bureaucrat', 'checkuser')
+  ('oversight', 'checkuser')
 LIMIT 5;
 								</code></pre>
 							</div>
@@ -2002,7 +2002,7 @@ HAVING (?count > 1)
 						<pre><code class="sparql">
 SELECT (COUNT(?someone) AS ?count) ?death
 WHERE {
-  ?someone wdt:P19 wd:Q1289 ;  # personne née ou morte à Grenoble
+  ?someone wdt:P19 wd:Q1289 ;  # personne née à Grenoble
            wdt:P20 ?death .    #          morte dans une ville donnée
 }
 GROUP BY ?death
@@ -2050,7 +2050,7 @@ LIMIT 5
 						<pre><code class="sparql">
 SELECT (COUNT(?someone) AS ?count) ?death
 WHERE {
-  ?someone wdt:P19 wd:Q1289 .  # personne née ou morte à Grenoble
+  ?someone wdt:P19 wd:Q1289 .  # personne née à Grenoble
   OPTIONAL {
     ?someone wdt:P20 ?death .  # personne morte dans une ville donnée
   }
@@ -2100,7 +2100,7 @@ LIMIT 5
 						<pre><code class="sparql">
 SELECT (COUNT(?someone) AS ?count)
 WHERE {
-  ?someone wdt:P19 wd:Q1289 .  # personne née ou morte à Grenoble
+  ?someone wdt:P19 wd:Q1289 .  # personne née à Grenoble
   OPTIONAL {
     ?someone wdt:P20 ?death .  # personne morte dans une ville donnée
   }

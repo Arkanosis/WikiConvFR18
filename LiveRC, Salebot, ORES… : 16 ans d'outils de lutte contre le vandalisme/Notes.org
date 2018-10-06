@@ -17,8 +17,9 @@ fois nombreux et très différents les uns des autres.
 Cette conférence consistera en un panorama plus ou moins chronologique et
 nécessairement non-exhaustif des outils en question : IRC, Vandal Fighter,
 Popups, LiveRC, Twinkle, Salebot, ClueBot, Huggle, ORES, etc.
-* Plan [4/7]
-** DONE Outils builtins [12/12]
+* Télécharger les images
+* Plan [5/7]
+** DONE Outils builtins [15/15]
  - [X] Modifier
  - [X] Historique
  - [X] Recent changes (2002 — Phase II) ([[https://commons.wikimedia.org/wiki/File:Modifications_r%C3%A9centes.jpg][Image]], [[https://commons.wikimedia.org/wiki/File:Modifications_r%C3%A9centes.png][Image]])
@@ -29,24 +30,24 @@ Popups, LiveRC, Twinkle, Salebot, ClueBot, Huggle, ORES, etc.
  - [X] Blocage (≤ 2003) ([[][Images]])
  - [X] RSS / Atom (avril 2004) ([[][Images]])
  - [X] [[https://meta.wikimedia.org/wiki/Help:Patrolled_edit/fr][Patrolled edits]] (9 août 2004) ([[https://commons.wikimedia.org/wiki/File:French_Wikipedia_-_Diff_Patrol.png][Images]], [[https://commons.wikimedia.org/wiki/File:Commons_Mark_as_patrolled.png][Images]])
+ - [X] [[https://www.mediawiki.org/wiki/Extension:ConfirmEdit][ConfirmEdit]] (2006, passe de l'exensions au core en 2011)
+ - [X] [[https://www.mediawiki.org/wiki/Extension:SpamBlacklist][SpamBlacklist]] (2006 – 2013)
+ - [X] [[https://www.mediawiki.org/wiki/Extension:TitleBlacklist][TitleBlacklist]] (2007 – 2013)
  - [X] Modifications récentes Wikidata (2015)
  - [X] Modifications récentes modernes (7 juillet 2017) ([[https://commons.wikimedia.org/wiki/Category:New_filters_for_edit_review][Images]])
    - filtres
    - couleurs
    - en direct
-** TODO Extensions de MediaWiki [0/9]
- - [ ] Userip / Espionage / [[https://www.mediawiki.org/wiki/Extension:CheckUser][CheckUser]] (2005)
- - [ ] [[https://www.mediawiki.org/wiki/Extension:ConfirmEdit][ConfirmEdit]] (?)
- - [ ] [[https://www.mediawiki.org/wiki/Extension:TitleBlacklist][TitleBlacklist]] (?)
- - [ ] [[https://www.mediawiki.org/wiki/Extension:SpamBlacklist][SpamBlacklist]] (?)
- - [ ] [[https://meta.wikimedia.org/wiki/Flagged_Revisions][FlaggedRevs]] ([[https://gerrit.wikimedia.org/r/plugins/gitiles/mediawiki/extensions/FlaggedRevs/+/ef1bcdee976286b4e25f10d61b6b444f9cf0a10c][2007]], activé en 2008 sur de, hu, pl, ru, zh et en 2009 sur ar, 26 wp, ~20 autres, rejeté en 2009 sur fr, [[https://lists.wikimedia.org/pipermail/wikitech-l/2014-May/076651.html][2009 à 2014]] sur mw, par erreur, ~58 jours en moyenne pour une relecture sur mw, ~15 jours sur de en 2016 [[https://de.wikipedia.org/wiki/Spezial:Sichtungsstatistik][15 h aujourd'hui]]) ([[https://commons.wikimedia.org/wiki/Category:Flagged_Revisions][Images]])
- - [ ] [[https://www.mediawiki.org/wiki/Extension:AbuseFilter][AbuseFilter]] (2008, activé en 2009 sur de, ru, ar, en, pl, sv, commons…, [[https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Prise_de_d%C3%A9cision/AbuseFilter][2010]] sur fr) ([[][Images]])
- - [ ] [[https://en.wikipedia.org/wiki/Wikipedia:Pending_changes][PendingChanges]] ([[https://en.wikipedia.org/wiki/Wikipedia:Pending_changes#Timeline][2009]], testé en 2010-2011 sur en, activé en décembre 2012 sur en) ([[https://commons.wikimedia.org/wiki/Category:PendingChanges][Images]])
- - [ ] [[https://www.mediawiki.org/wiki/Extension:Approved_Revs][Approved Revs]] (mw 1.11, [[https://gerrit.wikimedia.org/r/plugins/gitiles/mediawiki/extensions/ApprovedRevs/+/1470a7ad761c4360c2a88cf278d2b63290b70437][2010]], pas utilisé) ([[][Images]])
+** DONE Extensions de MediaWiki [6/9]
+ - [X] Userip / Espionage / [[https://www.mediawiki.org/wiki/Extension:CheckUser][CheckUser]] (2005)
+ - [X] [[https://meta.wikimedia.org/wiki/Flagged_Revisions][FlaggedRevs]] ([[https://gerrit.wikimedia.org/r/plugins/gitiles/mediawiki/extensions/FlaggedRevs/+/ef1bcdee976286b4e25f10d61b6b444f9cf0a10c][2007]], activé en 2008 sur de, hu, pl, ru, zh et en 2009 sur ar, 26 wp, ~20 autres, rejeté en 2009 sur fr, [[https://lists.wikimedia.org/pipermail/wikitech-l/2014-May/076651.html][2009 à 2014]] sur mw, par erreur, ~58 jours en moyenne pour une relecture sur mw, ~15 jours sur de en 2016 [[https://de.wikipedia.org/wiki/Spezial:Sichtungsstatistik][15 h aujourd'hui]]) ([[https://commons.wikimedia.org/wiki/Category:Flagged_Revisions][Images]])
+ - [X] [[https://www.mediawiki.org/wiki/Extension:AbuseFilter][AbuseFilter]] (2008, activé en 2009 sur de, ru, ar, en, pl, sv, commons…, [[https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Prise_de_d%C3%A9cision/AbuseFilter][2010]] sur fr) ([[][Images]])
+ - [X] [[https://en.wikipedia.org/wiki/Wikipedia:Pending_changes][PendingChanges]] ([[https://en.wikipedia.org/wiki/Wikipedia:Pending_changes#Timeline][2009]], testé en 2010-2011 sur en, activé en décembre 2012 sur en) ([[https://commons.wikimedia.org/wiki/Category:PendingChanges][Images]])
  - [ ] [[https://en.wikipedia.org/wiki/Wikipedia:Patrolled_revisions][Patrolled revisions]] ([[][Images]])
- - [ ] [[https://www.mediawiki.org/wiki/Page_Curation][Page curation / PageTriage]] (2012) ([[https://commons.wikimedia.org/wiki/Category:PageTriage][Images]])
+ - [ ] [[https://www.mediawiki.org/wiki/Extension:Approved_Revs][Approved Revs]] (mw 1.11, [[https://gerrit.wikimedia.org/r/plugins/gitiles/mediawiki/extensions/ApprovedRevs/+/1470a7ad761c4360c2a88cf278d2b63290b70437][2010]], pas utilisé) ([[][Images]])
+ - [X] [[https://www.mediawiki.org/wiki/Page_Curation][Page curation / PageTriage]] (2012) ([[https://commons.wikimedia.org/wiki/Category:PageTriage][Images]])
  - [ ] [[https://www.mediawiki.org/wiki/Extension:Moderation][Moderation]] ([[https://github.com/edwardspec/mediawiki-moderation/commit/351fd5fc52828bb76298975928a0b663cd6b7d5f][2014]], pas utilisé) ([[][Images]])
- - [ ] [[https://en.wikipedia.org/wiki/Wikipedia:Deferred_revisions][Deferred revisions]] → Deferred changes (AbuseFilter, ORES), approuvé sur en en 2016, jamais implémenté ([[][Images]])
+ - [X] [[https://en.wikipedia.org/wiki/Wikipedia:Deferred_revisions][Deferred revisions]] → Deferred changes (AbuseFilter, ORES), approuvé sur en en 2016, jamais implémenté ([[][Images]])
 ** DONE Scripts on-wiki [13/13]
  - [X] [[http://sam.zoy.org/wikipedia/godmode-light.js][God mode light]] (≤ mars 2005) ([[][Images]])
  - [X] [[https://en.wikipedia.org/wiki/Wikipedia:Tools/Navigation_popups][Lupin's Popups]] (2 août 2005) ([[https://commons.wikimedia.org/wiki/Category:Navigation_popups][Images]])

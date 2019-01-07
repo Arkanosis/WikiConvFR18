@@ -1,5 +1,13 @@
 # WikiConvFR18
 
+Ce dépôt contient les slides de mes trois interventions lors de la WikiConvention francophone 2018.
+
+## Versions en ligne
+
+* [LiveRC, Salebot, ORES… 16 ans d'outils de lutte contre le vandalisme](https://arkanosis.fr/wikipedia/WikiConvFR18/LiveRC,%20Salebot,%20ORES%e2%80%a6%20:%2016%20ans%20d'outils%20de%20lutte%20contre%20le%20vandalisme/Slides.html)
+* [Quarry et Query : introduction à SQL et SPARQL](https://arkanosis.fr/wikipedia/WikiConvFR18/Quarry%20et%20Query%20:%20introduction%20%c3%a0%20SQL%20et%20SPARQL/Slides.html)
+* [wmrc : LiveRC dans votre poche](https://arkanosis.fr/wikipedia/WikiConvFR18/wmrc%20:%20LiveRC%20dans%20votre%20poche/Slides.html)
+
 ## Checklist
 - Vérifier le wifi
 - Se connecter avec le bon compte
